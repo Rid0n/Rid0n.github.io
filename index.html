@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hi</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <!-- When deploying: add <script src="collage-data.js"></script> here (generated via Export in edit mode) -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
+</head>
+<body>
+    <section id="text-section">
+        <div id="markdown-content"></div>
+    </section>
+
+    <section id="collage-section">
+        <div id="collage-canvas">
+            <div id="drop-overlay">Drop images here</div>
+            <div id="empty-hint">No images yet — enter edit mode to add some (Ctrl+Shift+E)</div>
+        </div>
+    </section>
+
+    <div id="edit-bar">
+        <span id="edit-label">edit mode</span>
+        <button id="upload-btn">+ add images</button>
+        <input id="file-input" type="file" accept="image/*" multiple hidden>
+        <button id="export-btn">export</button>
+        <button id="crop-btn" disabled>crop</button>
+        <button id="exit-edit-btn">done</button>
+    </div>
+
+    <div id="crop-modal" hidden>
+        <div id="crop-inner">
+            <div id="crop-container">
+                <img id="crop-img" draggable="false">
+                <div id="crop-rect">
+                    <div class="crop-handle" data-h="nw"></div>
+                    <div class="crop-handle" data-h="ne"></div>
+                    <div class="crop-handle" data-h="sw"></div>
+                    <div class="crop-handle" data-h="se"></div>
+                </div>
+            </div>
+            <div id="crop-actions">
+                <button id="crop-reset-btn">Reset</button>
+                <button id="crop-cancel-btn">Cancel</button>
+                <button id="crop-apply-btn">Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

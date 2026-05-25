@@ -1,0 +1,7 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Exported deploy artifact — commit this when you're ready to publish images
+# collage-data.js
