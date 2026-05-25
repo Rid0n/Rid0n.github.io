@@ -290,12 +290,11 @@ document.addEventListener('mousedown', e => {
     const id = w.dataset.id;
     select(id);
     const cr = $canvas().getBoundingClientRect();
-    const wr = w.getBoundingClientRect();
 
     drag = {
         el: w, id,
-        ox: e.clientX - (wr.left - cr.left),
-        oy: e.clientY - (wr.top - cr.top),
+        ox: e.clientX - cr.left - (parseFloat(w.style.left) || 0),
+        oy: e.clientY - cr.top  - (parseFloat(w.style.top)  || 0),
     };
 
     const maxZ = Math.max(0, ...Object.values(layout).map(p => p.z || 0));
