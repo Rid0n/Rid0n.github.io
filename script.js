@@ -166,6 +166,7 @@ async function renderCollage() {
         const rotHandle = document.createElement('div');
         rotHandle.className = 'rot-handle';
 
+        w.addEventListener('dragstart', e => e.preventDefault());
         w.addEventListener('dblclick', e => {
             if (editMode) { e.preventDefault(); openCropModal(id); }
         });
