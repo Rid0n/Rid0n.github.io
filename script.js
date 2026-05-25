@@ -283,7 +283,7 @@ document.addEventListener('mousedown', e => {
     if (!editMode) return;
     if (e.target.classList.contains('rsz-handle') || e.target.classList.contains('rot-handle') || e.target.classList.contains('del-btn')) return;
     const w = e.target.closest('.img-w');
-    if (!w) { deselect(); return; }
+    if (!w) { if (!e.target.closest('#edit-bar')) deselect(); return; }
 
     e.preventDefault();
     const id = w.dataset.id;
