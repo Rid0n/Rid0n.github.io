@@ -232,7 +232,27 @@ function select(id) {
     if (selectedId && imgEls[selectedId]) imgEls[selectedId].classList.remove('selected');
     selectedId = id;
     if (id && imgEls[id]) imgEls[id].classList.add('selected');
-    document.getElementById('crop-btn').disabled = !id;
+    const on = !!id;
+    document.getElementById('crop-btn').disabled = !on;
+    document.getElementById('layer-front-btn').disabled = !on;
+    document.getElementById('layer-fwd-btn').disabled = !on;
+    document.getElementById('layer-back-btn').disabled = !on;
+    document.getElementById('layer-rear-btn').disabled = !on;
+}
+
+function reorderLayer(id, action) {
+    const sorted = Object.keys(layout).sort((a, b) => (layout[a].z || 0) - (layout[b].z || 0));
+    const idx = sorted.indexOf(id);
+    sorted.splice(idx, 1);
+    if      (action === 'front')    sorted.push(id);
+    else if (action === 'back')     sorted.unshift(id);
+    else if (action === 'forward')  sorted.splice(Math.min(idx + 1, sorted.length), 0, id);
+    else if (action === 'backward') sorted.splice(Math.max(idx - 1, 0), 0, id);
+    sorted.forEach((imgId, i) => {
+        layout[imgId].z = i + 1;
+        if (imgEls[imgId]) imgEls[imgId].style.zIndex = i + 1;
+    });
+    saveLayout();
 }
 
 function deselect() {
@@ -536,6 +556,10 @@ async function init() {
     document.getElementById('exit-edit-btn').addEventListener('click', toggleEdit);
     document.getElementById('export-btn').addEventListener('click', exportCollage);
     document.getElementById('crop-btn').addEventListener('click', () => { if (selectedId) openCropModal(selectedId); });
+    document.getElementById('layer-front-btn').addEventListener('click', () => { if (selectedId) reorderLayer(selectedId, 'front'); });
+    document.getElementById('layer-fwd-btn').addEventListener('click',   () => { if (selectedId) reorderLayer(selectedId, 'forward'); });
+    document.getElementById('layer-back-btn').addEventListener('click',  () => { if (selectedId) reorderLayer(selectedId, 'backward'); });
+    document.getElementById('layer-rear-btn').addEventListener('click',  () => { if (selectedId) reorderLayer(selectedId, 'back'); });
     document.getElementById('crop-apply-btn').addEventListener('click', applyCropModal);
     document.getElementById('crop-cancel-btn').addEventListener('click', closeCropModal);
     document.getElementById('crop-reset-btn').addEventListener('click', () => {

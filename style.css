@@ -328,6 +328,8 @@ body {
     z-index: 500;
     white-space: nowrap;
     font-family: system-ui, sans-serif;
+    max-width: calc(100vw - 32px);
+    overflow-x: auto;
 }
 
 #edit-bar.visible {
