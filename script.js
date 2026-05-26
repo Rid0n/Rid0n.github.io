@@ -405,7 +405,8 @@ async function addFiles(files) {
     for (const f of Array.from(files)) {
         if (!f.type.startsWith('image/')) continue;
         const id = 'i' + Date.now() + Math.random().toString(36).slice(2, 7);
-        await dbPut(id, await compress(f));
+        const blob = f.type === 'image/svg+xml' ? f : await compress(f);
+        await dbPut(id, blob);
         added++;
     }
     if (added > 0) await renderCollage();
