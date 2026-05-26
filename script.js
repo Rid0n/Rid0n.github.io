@@ -319,7 +319,9 @@ document.addEventListener('mousedown', e => {
     e.preventDefault();
     const id = w.dataset.id;
     const additive = e.shiftKey || e.ctrlKey || e.metaKey;
-    select(id, additive);
+    // Only change selection if shift-clicking, or clicking something not already selected.
+    // Clicking an already-selected image without shift should keep the whole group selected.
+    if (additive || !selectedIds.has(id)) select(id, additive);
 
     const cr = $canvas().getBoundingClientRect();
     const maxZ = Math.max(0, ...Object.values(layout).map(p => p.z || 0));
