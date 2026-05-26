@@ -76,7 +76,7 @@ function saveLayout() {
 // ── Image compression ────────────────────────────────────────────────────────
 
 function compress(file) {
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
         const img = new Image();
         const url = URL.createObjectURL(file);
         img.onload = () => {
@@ -87,8 +87,9 @@ function compress(file) {
             c.width = Math.round(img.width * s);
             c.height = Math.round(img.height * s);
             c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
-            c.toBlob(resolve, 'image/jpeg', 0.88);
+            c.toBlob(blob => blob ? resolve(blob) : reject(new Error('toBlob failed')), 'image/jpeg', 0.88);
         };
+        img.onerror = () => { URL.revokeObjectURL(url); reject(new Error(file.name)); };
         img.src = url;
     });
 }
@@ -413,15 +414,18 @@ document.addEventListener('mouseup', () => {
 // ── File upload ───────────────────────────────────────────────────────────────
 
 async function addFiles(files) {
-    let added = 0;
-    for (const f of Array.from(files)) {
-        if (!f.type.startsWith('image/')) continue;
+    const valid = Array.from(files).filter(f => f.type.startsWith('image/'));
+    if (!valid.length) return;
+    toast(`Adding ${valid.length} image${valid.length > 1 ? 's' : ''}…`);
+    const results = await Promise.allSettled(valid.map(async f => {
         const id = 'i' + Date.now() + Math.random().toString(36).slice(2, 7);
         const blob = f.type === 'image/svg+xml' ? f : await compress(f);
         await dbPut(id, blob);
-        added++;
-    }
+    }));
+    const added = results.filter(r => r.status === 'fulfilled').length;
+    const failed = results.filter(r => r.status === 'rejected').length;
     if (added > 0) await renderCollage();
+    toast(failed ? `Added ${added}, skipped ${failed} unsupported files` : `Added ${added} image${added > 1 ? 's' : ''}`);
 }
 
 // ── Remove image ──────────────────────────────────────────────────────────────
