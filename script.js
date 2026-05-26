@@ -110,31 +110,43 @@ const $canvas = () => document.getElementById('collage-canvas');
 
 // ── Collage rendering ────────────────────────────────────────────────────────
 
+async function seedFromCollageData() {
+    const entries = Object.entries(window.COLLAGE_DATA.images);
+    await Promise.all(entries.map(async ([id, dataURL]) => {
+        const blob = await fetch(dataURL).then(r => r.blob());
+        await dbPut(id, blob);
+    }));
+    const seededLayout = window.COLLAGE_DATA.layout || {};
+    Object.entries(seededLayout).forEach(([id, pos]) => {
+        if (!layout[id]) layout[id] = pos;
+    });
+    saveLayout();
+}
+
 async function renderCollage() {
     Object.values(objURLs).forEach(u => URL.revokeObjectURL(u));
     Object.keys(objURLs).forEach(k => delete objURLs[k]);
     Object.keys(imgEls).forEach(k => delete imgEls[k]);
     $canvas().querySelectorAll('.img-w').forEach(el => el.remove());
 
-    let entries;
-    if (window.COLLAGE_DATA) {
-        layout = window.COLLAGE_DATA.layout || {};
-        entries = Object.entries(window.COLLAGE_DATA.images).map(([id, src]) => ({ id, src }));
-    } else {
+    layout = loadLayout();
+    let blobs = await dbAll();
+
+    if (blobs.length === 0 && window.COLLAGE_DATA) {
+        toast('Loading images…');
+        await seedFromCollageData();
         layout = loadLayout();
-        const blobs = await dbAll();
-        entries = blobs.map(({ id, blob }) => {
-            const url = URL.createObjectURL(blob);
-            objURLs[id] = url;
-            return { id, src: url };
-        });
+        blobs = await dbAll();
     }
 
+    const entries = blobs.map(({ id, blob }) => {
+        const url = URL.createObjectURL(blob);
+        objURLs[id] = url;
+        return { id, src: url };
+    });
+
     entries.forEach(({ id, src }) => {
-        if (!layout[id]) {
-            layout[id] = randPos();
-            if (!window.COLLAGE_DATA) saveLayout();
-        }
+        if (!layout[id]) layout[id] = randPos();
         const p = layout[id];
 
         const w = document.createElement('div');
