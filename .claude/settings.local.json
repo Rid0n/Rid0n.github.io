@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\bin\\\\git.exe\"; Set-Location \"c:\\\\Users\\\\serge\\\\frieposter\"; & $git add .; & $git commit -m \"feat: SVG support in collage \\(skip compression\\)\"; & $git push)"
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\bin\\\\git.exe\"; Set-Location \"c:\\\\Users\\\\serge\\\\frieposter\"; & $git add .; & $git commit -m \"feat: SVG support in collage \\(skip compression\\)\"; & $git push)",
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\bin\\\\git.exe\"; Set-Location \"c:\\\\Users\\\\serge\\\\frieposter\"; & $git add .; & $git commit -m \"deploy final collage arrangement\"; & $git push)"
     ]
   }
 }
