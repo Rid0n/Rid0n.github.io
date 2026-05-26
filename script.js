@@ -34,13 +34,14 @@ Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciat
 `;
 
 const MARKDOWN_TEXT_2 = `
-# who you are
+## who you are
 
 I don't feel like imposing much restrictions, who tf can tell why people vibe or not, feel free to disregard. Still, I imagine you would be:
+
 - kind
-- smart
+- smart, you're ravenous to knowledge
 - stupid
-- sensitive af
+- sensitive as shit
 
 `;
 

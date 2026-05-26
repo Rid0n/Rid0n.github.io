@@ -80,14 +80,16 @@ body {
     border-top: 1px solid #e4e0d8;
 }
 
-#markdown-content h1 {
+#markdown-content h1,
+#markdown-content-2 h1 {
     font-size: 2.1rem;
     font-weight: normal;
     letter-spacing: -0.02em;
     margin-bottom: 1.1rem;
 }
 
-#markdown-content h2 {
+#markdown-content h2,
+#markdown-content-2 h2 {
     font-size: 0.78rem;
     font-weight: normal;
     letter-spacing: 0.12em;
@@ -96,30 +98,36 @@ body {
     margin: 2.2rem 0 0.7rem;
 }
 
-#markdown-content h3 {
+#markdown-content h3,
+#markdown-content-2 h3 {
     font-size: 1.05rem;
     font-weight: bold;
     margin: 1.4rem 0 0.5rem;
 }
 
-#markdown-content p {
+#markdown-content p,
+#markdown-content-2 p {
     line-height: 1.82;
     margin-bottom: 1rem;
     color: #3a3a3a;
 }
 
 #markdown-content ul,
-#markdown-content ol {
+#markdown-content ol,
+#markdown-content-2 ul,
+#markdown-content-2 ol {
     padding-left: 1.4rem;
     margin-bottom: 1rem;
 }
 
-#markdown-content li {
+#markdown-content li,
+#markdown-content-2 li {
     line-height: 1.82;
     color: #3a3a3a;
 }
 
-#markdown-content blockquote {
+#markdown-content blockquote,
+#markdown-content-2 blockquote {
     border-left: 2px solid #d4cfc4;
     padding-left: 1.1rem;
     margin: 1rem 0;
@@ -127,11 +135,13 @@ body {
     font-style: italic;
 }
 
-#markdown-content a {
+#markdown-content a,
+#markdown-content-2 a {
     color: #7a8fa8;
 }
 
-#markdown-content hr {
+#markdown-content hr,
+#markdown-content-2 hr {
     border: none;
     border-top: 1px solid #e4e0d8;
     margin: 2rem 0;
