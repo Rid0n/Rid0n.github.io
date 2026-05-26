@@ -277,6 +277,14 @@ body {
     display: block;
 }
 
+/* Hide per-image handles during multi-select */
+
+.edit-mode.multi-select .img-w .del-btn,
+.edit-mode.multi-select .img-w .rsz-handle,
+.edit-mode.multi-select .img-w .rot-handle {
+    display: none !important;
+}
+
 /* Drop overlay */
 
 #drop-overlay {

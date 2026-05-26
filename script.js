@@ -101,7 +101,7 @@ let editMode = false;
 let drag = null;
 let resz = null;
 let rot = null;
-let selectedId = null;
+let selectedIds = new Set();
 let cropState = null;
 let cropDrag = null;
 const imgEls = {};
@@ -242,16 +242,37 @@ function updateHint(show) {
 
 // ── Selection ─────────────────────────────────────────────────────────────────
 
-function select(id) {
-    if (selectedId && imgEls[selectedId]) imgEls[selectedId].classList.remove('selected');
-    selectedId = id;
-    if (id && imgEls[id]) imgEls[id].classList.add('selected');
-    const on = !!id;
-    document.getElementById('crop-btn').disabled = !on;
-    document.getElementById('layer-front-btn').disabled = !on;
-    document.getElementById('layer-fwd-btn').disabled = !on;
-    document.getElementById('layer-back-btn').disabled = !on;
-    document.getElementById('layer-rear-btn').disabled = !on;
+function select(id, additive = false) {
+    if (!additive) {
+        selectedIds.forEach(sid => imgEls[sid]?.classList.remove('selected'));
+        selectedIds.clear();
+    }
+    if (id) {
+        if (additive && selectedIds.has(id)) {
+            selectedIds.delete(id);
+            imgEls[id]?.classList.remove('selected');
+        } else {
+            selectedIds.add(id);
+            imgEls[id]?.classList.add('selected');
+        }
+    }
+    updateSelectionUI();
+}
+
+function deselect() {
+    selectedIds.forEach(sid => imgEls[sid]?.classList.remove('selected'));
+    selectedIds.clear();
+    updateSelectionUI();
+}
+
+function updateSelectionUI() {
+    const n = selectedIds.size;
+    const multi = n > 1;
+    $canvas().classList.toggle('multi-select', multi);
+    document.getElementById('crop-btn').disabled = n !== 1;
+    ['layer-front-btn', 'layer-fwd-btn', 'layer-back-btn', 'layer-rear-btn'].forEach(btnId => {
+        document.getElementById(btnId).disabled = n !== 1;
+    });
 }
 
 function reorderLayer(id, action) {
@@ -267,10 +288,6 @@ function reorderLayer(id, action) {
         if (imgEls[imgId]) imgEls[imgId].style.zIndex = i + 1;
     });
     saveLayout();
-}
-
-function deselect() {
-    select(null);
 }
 
 // ── Edit mode ────────────────────────────────────────────────────────────────
@@ -301,19 +318,22 @@ document.addEventListener('mousedown', e => {
 
     e.preventDefault();
     const id = w.dataset.id;
-    select(id);
+    const additive = e.shiftKey || e.ctrlKey || e.metaKey;
+    select(id, additive);
+
     const cr = $canvas().getBoundingClientRect();
+    const maxZ = Math.max(0, ...Object.values(layout).map(p => p.z || 0));
 
     drag = {
-        el: w, id,
-        ox: e.clientX - cr.left - (parseFloat(w.style.left) || 0),
-        oy: e.clientY - cr.top  - (parseFloat(w.style.top)  || 0),
+        startX: e.clientX - cr.left,
+        startY: e.clientY - cr.top,
+        group: [...selectedIds].map((sid, i) => {
+            layout[sid].z = maxZ + 1 + i;
+            imgEls[sid].style.zIndex = maxZ + 1 + i;
+            imgEls[sid].classList.add('dragging');
+            return { id: sid, el: imgEls[sid], x0: parseFloat(imgEls[sid].style.left) || 0, y0: parseFloat(imgEls[sid].style.top) || 0 };
+        }),
     };
-
-    const maxZ = Math.max(0, ...Object.values(layout).map(p => p.z || 0));
-    layout[id].z = maxZ + 1;
-    w.style.zIndex = maxZ + 1;
-    w.classList.add('dragging');
 });
 
 // ── Drag to resize (capture phase to beat move handler) ──────────────────────
@@ -349,12 +369,16 @@ document.addEventListener('mousedown', e => {
 document.addEventListener('mousemove', e => {
     if (drag) {
         const cr = $canvas().getBoundingClientRect();
-        const x = Math.max(0, e.clientX - cr.left - drag.ox);
-        const y = Math.max(0, e.clientY - cr.top - drag.oy);
-        drag.el.style.left = x + 'px';
-        drag.el.style.top = y + 'px';
-        layout[drag.id].x = x;
-        layout[drag.id].y = y;
+        const dx = (e.clientX - cr.left) - drag.startX;
+        const dy = (e.clientY - cr.top) - drag.startY;
+        drag.group.forEach(({ id, el, x0, y0 }) => {
+            const x = Math.max(0, x0 + dx);
+            const y = Math.max(0, y0 + dy);
+            el.style.left = x + 'px';
+            el.style.top = y + 'px';
+            layout[id].x = x;
+            layout[id].y = y;
+        });
     }
     if (resz) {
         const w = Math.max(80, resz.sw + (e.clientX - resz.sx));
@@ -392,7 +416,7 @@ document.addEventListener('mousemove', e => {
 
 document.addEventListener('mouseup', () => {
     if (drag) {
-        drag.el.classList.remove('dragging');
+        drag.group.forEach(({ el }) => el.classList.remove('dragging'));
         saveLayout();
         fitCanvas();
         drag = null;
@@ -431,7 +455,7 @@ async function addFiles(files) {
 // ── Remove image ──────────────────────────────────────────────────────────────
 
 async function removeImg(id) {
-    if (selectedId === id) deselect();
+    if (selectedIds.has(id)) deselect();
     await dbDel(id);
     delete layout[id];
     saveLayout();
@@ -572,11 +596,11 @@ async function init() {
     });
     document.getElementById('exit-edit-btn').addEventListener('click', toggleEdit);
     document.getElementById('export-btn').addEventListener('click', exportCollage);
-    document.getElementById('crop-btn').addEventListener('click', () => { if (selectedId) openCropModal(selectedId); });
-    document.getElementById('layer-front-btn').addEventListener('click', () => { if (selectedId) reorderLayer(selectedId, 'front'); });
-    document.getElementById('layer-fwd-btn').addEventListener('click',   () => { if (selectedId) reorderLayer(selectedId, 'forward'); });
-    document.getElementById('layer-back-btn').addEventListener('click',  () => { if (selectedId) reorderLayer(selectedId, 'backward'); });
-    document.getElementById('layer-rear-btn').addEventListener('click',  () => { if (selectedId) reorderLayer(selectedId, 'back'); });
+    document.getElementById('crop-btn').addEventListener('click', () => { const [id] = selectedIds; if (id) openCropModal(id); });
+    document.getElementById('layer-front-btn').addEventListener('click', () => { const [id] = selectedIds; if (id) reorderLayer(id, 'front'); });
+    document.getElementById('layer-fwd-btn').addEventListener('click',   () => { const [id] = selectedIds; if (id) reorderLayer(id, 'forward'); });
+    document.getElementById('layer-back-btn').addEventListener('click',  () => { const [id] = selectedIds; if (id) reorderLayer(id, 'backward'); });
+    document.getElementById('layer-rear-btn').addEventListener('click',  () => { const [id] = selectedIds; if (id) reorderLayer(id, 'back'); });
     document.getElementById('crop-apply-btn').addEventListener('click', applyCropModal);
     document.getElementById('crop-cancel-btn').addEventListener('click', closeCropModal);
     document.getElementById('crop-reset-btn').addEventListener('click', () => {
