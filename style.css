@@ -69,10 +69,15 @@ body {
 
 /* ── Text section ── */
 
-#text-section {
+#text-section,
+#text-section-2 {
     max-width: 660px;
     margin: 0 auto;
     padding: 72px 28px 56px;
+}
+
+#text-section-2 {
+    border-top: 1px solid #e4e0d8;
 }
 
 #markdown-content h1 {

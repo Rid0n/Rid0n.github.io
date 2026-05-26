@@ -2,7 +2,7 @@
 // Authoring mode: uses IndexedDB for images + localStorage for positions.
 
 const MARKDOWN_TEXT = `
-# hi, i'm serge!
+# hi, i'm serge! INTRO TEXT
 (any/all)
 
 *Lorem ipsum dolor sit amet*, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
@@ -15,9 +15,33 @@ Laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh
 - another quality you're looking for
 - a third thing
 
-## about me
+## about me sections
+
+- songs
+- art
+- films
+- series
+- memes
+- quotes
+- YT channels
+- games
+- ##TODO: add delights
+
+- whimsy/what we'll be like
+
 
 Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+`;
+
+const MARKDOWN_TEXT_2 = `
+# who you are
+
+I don't feel like imposing much restrictions, who tf can tell why people vibe or not, feel free to disregard. Still, I imagine you would be:
+- kind
+- smart
+- stupid
+- sensitive af
+
 `;
 
 // ── IndexedDB ────────────────────────────────────────────────────────────────
@@ -580,6 +604,7 @@ function toast(msg) {
 
 function renderText() {
     document.getElementById('markdown-content').innerHTML = marked.parse(MARKDOWN_TEXT);
+    document.getElementById('markdown-content-2').innerHTML = marked.parse(MARKDOWN_TEXT_2);
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────
