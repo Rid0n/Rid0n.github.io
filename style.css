@@ -147,6 +147,21 @@ body {
     margin: 2rem 0;
 }
 
+/* ── Spoiler / blur reveal ── */
+
+.spoiler {
+    filter: blur(5px);
+    cursor: pointer;
+    transition: filter 0.3s;
+    user-select: none;
+}
+
+.spoiler.revealed {
+    filter: none;
+    cursor: default;
+    user-select: auto;
+}
+
 /* ── Image clip container ── */
 
 .img-clip {

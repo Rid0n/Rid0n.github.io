@@ -2,34 +2,35 @@
 // Authoring mode: uses IndexedDB for images + localStorage for positions.
 
 const MARKDOWN_TEXT = `
-# hi, i'm serge! (any/all, 24yo)
+# hi, i'm serge!  
+(any/all, 24yo, rus/eng)
 
-You've found my plea for close meaningful friendship I find myself in severe lack of. Perhaps, you do too.
+You've found my plea for close meaningful friendship I find myself in severe lack of.  
+Perhaps, you do too.
 
-The following will include:
+## The following will include:
 - A rant on adult friendships
 - An introduction to me
 - A draft of you
 - Type of shit we'd be up to
+
 (best viewed on larger screens)
 
-#RANT
-I am sick to my stomach of how miserable adult relationships are. The endless catchups? The all too familiar conversations running on repeat? Is it just me or does life just stop with work? 
-Being friends should be about helping one another discover life's secrets, reinvent yourself, be cradled in caring arms, have a haven safe from whatever storms, do projects together that have no purpose other than being cool.
+## Rant
+I am sick to my stomach of how miserable and empty   adult relationships are. The endless catchups? The all too familiar conversations running on repeat? Is it just me or does life just stop with work? This can not be all there is.
+
+Here's how I think friendships should be.
+I think meaning itself is only ever born of connection. I think individuality is a lie, it is us who'll save each other.
+
+A friend is someone whose hug has healing powers.
+Being friends should be about helping discover one another, reinvent yourself, be cradled in caring arms, have a haven safe from whatever storms, do projects together that have no purpose other than being cool.  
+We should be friends the way friends in Ghibli movies are.
+
+*Henceforth, I throw down a vulnerable bid to connect.* The way it should be done. \n
+Is this weird? Is this too much? Is this absurd? For sure! if you got better ideas tho, do tell.
 
 
-*Henceforth, I throw down a vulnerable bid to connect.* The way it should be done.
-Is this weird? Is this too much? Is this absurd? for sure! if you got a better idea, do tell.
-
-
-## about me sections
-This page consists of several sections
-
-- A collage of things I love to get to know me
-- A draft of what qualities I look for
-- A collection of shit we could do together
-
-Anyhoo! here's a collection of things that made me who I am.
+Anyhoo! Let's start with a collection of things that made me who I am.
 `;
 
 const MARKDOWN_TEXT_2 = `
@@ -42,8 +43,9 @@ I don't feel like imposing much restrictions, who tf can tell why people vibe or
 - stupid
 - sensitive as shit and intense
 - a transient, shifting being
-- life isn't something that happens to you, it's something you lead    
-# The shenanigans we'd be up to
+- life isn't something that happens to you, it's something you lead
+
+# shenanigans we'd be up to
 
 tough shit
 
@@ -54,6 +56,10 @@ tough shit
 - write intro(motivation+me) text, write inter(you + we'd be upto shit like x) text, write ender(text me) text
 - introduce we do shit collage: collect lil' guys and friendship examples
 - finalize everything
+
+
+You've reached the endpoint! kudos to you! claim your reward now! ||🍪||
+
 `;
 
 // ── IndexedDB ────────────────────────────────────────────────────────────────
@@ -614,10 +620,18 @@ function toast(msg) {
 
 // ── Markdown ──────────────────────────────────────────────────────────────────
 
-function renderText() {
-    document.getElementById('markdown-content').innerHTML = marked.parse(MARKDOWN_TEXT);
-    document.getElementById('markdown-content-2').innerHTML = marked.parse(MARKDOWN_TEXT_2);
+function spoiler(html) {
+    return html.replace(/\|\|(.+?)\|\|/g, '<span class="spoiler">$1</span>');
 }
+
+function renderText() {
+    document.getElementById('markdown-content').innerHTML = spoiler(marked.parse(MARKDOWN_TEXT));
+    document.getElementById('markdown-content-2').innerHTML = spoiler(marked.parse(MARKDOWN_TEXT_2));
+}
+
+document.addEventListener('click', e => {
+    if (e.target.classList.contains('spoiler')) e.target.classList.toggle('revealed');
+});
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 
