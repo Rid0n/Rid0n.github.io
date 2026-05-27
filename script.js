@@ -49,6 +49,13 @@ I don't feel like imposing much restrictions, who tf can tell why people vibe or
 
 tough shit
 
+
+# #TODOs
+
+- finalize me-layout by: adding delights, being happy with it all
+- write intro(motivation+me) text, write inter(you + we'd be upto shit like x) text, write ender(text me) text
+- introduce we do shit collage: collect lil' guys and friendship examples
+- finalize everything
 `;
 
 // ── IndexedDB ────────────────────────────────────────────────────────────────
