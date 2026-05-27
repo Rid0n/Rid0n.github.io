@@ -5,6 +5,8 @@ const MARKDOWN_TEXT = `
 # hi, i'm serge! INTRO TEXT
 (any/all)
 
+henceforth, I throw down a vulnerable bid to connect. How it should work.
+
 *Lorem ipsum dolor sit amet*, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
 
 ## what i'm looking for
@@ -25,23 +27,27 @@ Laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh
 - quotes
 - YT channels
 - games
-- ##TODO: add delights
+- #TODO: add delights
 
 - whimsy/what we'll be like
 
-
-Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+Anyhoo! here's a collection of things that made me who I am.
 `;
 
 const MARKDOWN_TEXT_2 = `
-## who you are
+# who you are
 
 I don't feel like imposing much restrictions, who tf can tell why people vibe or not, feel free to disregard. Still, I imagine you would be:
 
 - kind
 - smart, you're ravenous to knowledge
 - stupid
-- sensitive as shit
+- sensitive as shit and intense
+- a transient, shifting being
+- life isn't something that happens to you, it's something you lead    
+# The shenanigans we'd be up to
+
+tough shit
 
 `;
 
