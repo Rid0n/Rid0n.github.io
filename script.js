@@ -3,7 +3,7 @@
 
 const MARKDOWN_TEXT = `
 # hi, i'm serge!
-(any/all, 24yo, rus/eng)
+(any/all, 24yo, ru/en)
 
 You've found my plea for close meaningful friendship I find myself in severe lack of.
 Perhaps, you do too.
