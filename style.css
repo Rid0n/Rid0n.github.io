@@ -173,18 +173,19 @@ body {
 
 /* ── Collage section ── */
 
-#collage-section {
+#collage-section,
+#collage-section-2 {
     border-top: 1px solid #e4e0d8;
 }
 
-#collage-canvas {
+.collage-canvas {
     position: relative;
     min-height: 520px;
     width: 100%;
     overflow: visible;
 }
 
-#collage-canvas.edit-mode {
+.collage-canvas.edit-mode {
     background-image: radial-gradient(circle, #ccc9c0 1px, transparent 1px);
     background-size: 28px 28px;
     background-color: #f1ede5;
@@ -317,7 +318,7 @@ body {
 
 /* Drop overlay */
 
-#drop-overlay {
+.drop-overlay {
     display: none;
     position: absolute;
     inset: 0;
@@ -331,13 +332,13 @@ body {
     z-index: 200;
 }
 
-#drop-overlay.visible {
+.drop-overlay.visible {
     display: flex;
 }
 
 /* Empty hint */
 
-#empty-hint {
+.empty-hint {
     position: absolute;
     inset: 0;
     display: flex;
