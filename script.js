@@ -2,34 +2,32 @@
 // Authoring mode: uses IndexedDB for images + localStorage for positions.
 
 const MARKDOWN_TEXT = `
-# hi, i'm serge! INTRO TEXT
-(any/all)
+# hi, i'm serge! (any/all, 24yo)
 
-henceforth, I throw down a vulnerable bid to connect. How it should work.
+You've found my plea for close meaningful friendship I find myself in severe lack of. Perhaps, you do too.
 
-*Lorem ipsum dolor sit amet*, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+The following will include:
+- A rant on adult friendships
+- An introduction to me
+- A draft of you
+- Type of shit we'd be up to
+(best viewed on larger screens)
 
-## what i'm looking for
+#RANT
+I am sick to my stomach of how miserable adult relationships are. The endless catchups? The all too familiar conversations running on repeat? Is it just me or does life just stop with work? 
+Being friends should be about helping one another discover life's secrets, reinvent yourself, be cradled in caring arms, have a haven safe from whatever storms, do projects together that have no purpose other than being cool.
 
-Laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
 
-- something something
-- another quality you're looking for
-- a third thing
+*Henceforth, I throw down a vulnerable bid to connect.* The way it should be done.
+Is this weird? Is this too much? Is this absurd? for sure! if you got a better idea, do tell.
+
 
 ## about me sections
+This page consists of several sections
 
-- songs
-- art
-- films
-- series
-- memes
-- quotes
-- YT channels
-- games
-- #TODO: add delights
-
-- whimsy/what we'll be like
+- A collage of things I love to get to know me
+- A draft of what qualities I look for
+- A collection of shit we could do together
 
 Anyhoo! here's a collection of things that made me who I am.
 `;
