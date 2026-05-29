@@ -43,11 +43,11 @@ I don't feel like imposing much restrictions, who tf can tell why people vibe or
 - stupid
 - sensitive as shit and intense
 - a transient, shifting being
-- life isn't something that happens to you, it's something you lead
+- leading your life, not letting it just happen to you
 
-# shenanigans we'd be up to
+# what we'd do
 
-tough shit
+colorhunting, theme parties, travel on a whim, have sleepovers, talk dreams and nightmares, come unannounced to my door and be welcome, help eachother with anything large and small, be there, care, support, do cringe, make reels, sleep on the floor, talk to strangers, burst into acting spontaneously, frolic, have cocoa ceremonies, sing and finally, reinvent the essence of what it means to be friends a thousand times over
 
 
 # #TODOs
@@ -58,7 +58,9 @@ tough shit
 - finalize everything
 
 
-You've reached the endpoint! Kudos to you! claim your reward now! ||🍈||
+You've reached the endpoint! thank you. 
+I hope you have a rough idea of me and the friends I seek.
+If you feel like we'll vibe, text me on insta or tg - ||🍈serezhdipity||
 
 `;
 
