@@ -56,7 +56,9 @@ colorhunting, theme parties, travel on a whim, have sleepovers, talk dreams and 
 - write intro(motivation+me) text, write inter(you + we'd be upto shit like x) text, write ender(text me) text
 - introduce we do shit collage: collect lil' guys and friendship examples
 - finalize everything
+`;
 
+const MARKDOWN_TEXT_3 = `
 
 You've reached the endpoint! thank you. 
 I hope you have a rough idea of me and the friends I seek.
@@ -661,6 +663,7 @@ document.addEventListener('click', e => {
 function renderText() {
     document.getElementById('markdown-content').innerHTML   = spoiler(marked.parse(MARKDOWN_TEXT));
     document.getElementById('markdown-content-2').innerHTML = spoiler(marked.parse(MARKDOWN_TEXT_2));
+    document.getElementById('markdown-content-3').innerHTML = spoiler(marked.parse(MARKDOWN_TEXT_3));
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────

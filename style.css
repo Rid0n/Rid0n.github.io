@@ -70,18 +70,21 @@ body {
 /* ── Text section ── */
 
 #text-section,
-#text-section-2 {
+#text-section-2,
+#text-section-3 {
     max-width: 660px;
     margin: 0 auto;
     padding: 72px 28px 56px;
 }
 
-#text-section-2 {
+#text-section-2,
+#text-section-3 {
     border-top: 1px solid #e4e0d8;
 }
 
 #markdown-content h1,
-#markdown-content-2 h1 {
+#markdown-content-2 h1,
+#markdown-content-3 h1 {
     font-size: 2.1rem;
     font-weight: normal;
     letter-spacing: -0.02em;
@@ -89,7 +92,8 @@ body {
 }
 
 #markdown-content h2,
-#markdown-content-2 h2 {
+#markdown-content-2 h2,
+#markdown-content-3 h2 {
     font-size: 0.78rem;
     font-weight: normal;
     letter-spacing: 0.12em;
@@ -99,14 +103,16 @@ body {
 }
 
 #markdown-content h3,
-#markdown-content-2 h3 {
+#markdown-content-2 h3,
+#markdown-content-3 h3 {
     font-size: 1.05rem;
     font-weight: bold;
     margin: 1.4rem 0 0.5rem;
 }
 
 #markdown-content p,
-#markdown-content-2 p {
+#markdown-content-2 p,
+#markdown-content-3 p {
     line-height: 1.82;
     margin-bottom: 1rem;
     color: #3a3a3a;
@@ -115,19 +121,23 @@ body {
 #markdown-content ul,
 #markdown-content ol,
 #markdown-content-2 ul,
-#markdown-content-2 ol {
+#markdown-content-2 ol,
+#markdown-content-3 ul,
+#markdown-content-3 ol {
     padding-left: 1.4rem;
     margin-bottom: 1rem;
 }
 
 #markdown-content li,
-#markdown-content-2 li {
+#markdown-content-2 li,
+#markdown-content-3 li {
     line-height: 1.82;
     color: #3a3a3a;
 }
 
 #markdown-content blockquote,
-#markdown-content-2 blockquote {
+#markdown-content-2 blockquote,
+#markdown-content-3 blockquote {
     border-left: 2px solid #d4cfc4;
     padding-left: 1.1rem;
     margin: 1rem 0;
@@ -136,12 +146,14 @@ body {
 }
 
 #markdown-content a,
-#markdown-content-2 a {
+#markdown-content-2 a,
+#markdown-content-3 a {
     color: #7a8fa8;
 }
 
 #markdown-content hr,
-#markdown-content-2 hr {
+#markdown-content-2 hr,
+#markdown-content-3 hr {
     border: none;
     border-top: 1px solid #e4e0d8;
     margin: 2rem 0;
