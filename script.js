@@ -60,9 +60,12 @@ colorhunting, theme parties, travel on a whim, have sleepovers, talk dreams and 
 
 const MARKDOWN_TEXT_3 = `
 
-You've reached the endpoint! thank you. 
-I hope you have a rough idea of me and the friends I seek.
-If you feel like we'll vibe, text me on insta or tg - ||🍈serezhdipity||
+<p class="center">You've reached the endpoint! thank you.</p>
+
+<p class="center">I hope you have a rough idea of me and the friends I seek.</p>
+
+<p class="center">If you feel like we'll vibe, text me on insta or tg - ||🍈serezhdipity||
+</p>
 
 `;
 

@@ -159,6 +159,11 @@ body {
     margin: 2rem 0;
 }
 
+/* ── Text alignment ── */
+
+.center { text-align: center; }
+.right  { text-align: right; }
+
 /* ── Spoiler / blur reveal ── */
 
 .spoiler {
