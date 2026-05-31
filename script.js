@@ -72,7 +72,6 @@ const MARKDOWN_TEXT_3 = `
 
 <p class="center">If you feel like we'll vibe, text me on insta or tg - ||🍈serezhdipity||
 </p>
-
 `;
 
 // ── IndexedDB ────────────────────────────────────────────────────────────────

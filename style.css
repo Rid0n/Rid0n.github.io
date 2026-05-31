@@ -82,6 +82,15 @@ body {
     border-top: 1px solid #2e4a44;
 }
 
+#text-section-3 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
 #markdown-content h1,
 #markdown-content-2 h1,
 #markdown-content-3 h1 {
