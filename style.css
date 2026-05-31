@@ -62,8 +62,8 @@
 
 body {
     font-family: 'IvarDisplay', Georgia, serif;
-    background: #f8f5ef;
-    color: #2a2a2a;
+    background: #1c3330;
+    color: #e8edea;
     min-height: 100vh;
 }
 
@@ -79,7 +79,7 @@ body {
 
 #text-section-2,
 #text-section-3 {
-    border-top: 1px solid #e4e0d8;
+    border-top: 1px solid #2e4a44;
 }
 
 #markdown-content h1,
@@ -98,7 +98,7 @@ body {
     font-weight: normal;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #999;
+    color: #6aaa8e;
     margin: 2.2rem 0 0.7rem;
 }
 
@@ -115,7 +115,7 @@ body {
 #markdown-content-3 p {
     line-height: 1.82;
     margin-bottom: 1rem;
-    color: #3a3a3a;
+    color: #c8d4cc;
 }
 
 #markdown-content ul,
@@ -132,30 +132,30 @@ body {
 #markdown-content-2 li,
 #markdown-content-3 li {
     line-height: 1.82;
-    color: #3a3a3a;
+    color: #c8d4cc;
 }
 
 #markdown-content blockquote,
 #markdown-content-2 blockquote,
 #markdown-content-3 blockquote {
-    border-left: 2px solid #d4cfc4;
+    border-left: 2px solid #3a6058;
     padding-left: 1.1rem;
     margin: 1rem 0;
-    color: #777;
+    color: #7aaa96;
     font-style: italic;
 }
 
 #markdown-content a,
 #markdown-content-2 a,
 #markdown-content-3 a {
-    color: #7a8fa8;
+    color: #7ec4b0;
 }
 
 #markdown-content hr,
 #markdown-content-2 hr,
 #markdown-content-3 hr {
     border: none;
-    border-top: 1px solid #e4e0d8;
+    border-top: 1px solid #2e4a44;
     margin: 2rem 0;
 }
 
@@ -163,7 +163,7 @@ body {
 
 .fine-print {
     font-size: 0.72rem;
-    color: #aaa;
+    color: #5a8878;
     line-height: 1.6;
 }
 
@@ -178,8 +178,8 @@ body {
 }
 
 .tag-cloud span {
-    background: #ede9e1;
-    color: #3a3a3a;
+    background: #243f3a;
+    color: #c8d4cc;
     padding: 5px 14px;
     border-radius: 100px;
     font-size: 0.85rem;
@@ -219,7 +219,7 @@ body {
 
 #collage-section,
 #collage-section-2 {
-    border-top: 1px solid #e4e0d8;
+    border-top: 1px solid #2e4a44;
 }
 
 .collage-canvas {
@@ -230,9 +230,9 @@ body {
 }
 
 .collage-canvas.edit-mode {
-    background-image: radial-gradient(circle, #ccc9c0 1px, transparent 1px);
+    background-image: radial-gradient(circle, #3a6058 1px, transparent 1px);
     background-size: 28px 28px;
-    background-color: #f1ede5;
+    background-color: #162a27;
 }
 
 /* ── Image wrappers ── */
@@ -289,7 +289,7 @@ body {
     height: 22px;
     background: #cc4444;
     color: #fff;
-    border: 2px solid #f8f5ef;
+    border: 2px solid #1c3330;
     border-radius: 50%;
     font-size: 16px;
     line-height: 18px;
@@ -317,7 +317,7 @@ body {
     width: 14px;
     height: 14px;
     background: #7a9cc4;
-    border: 2px solid #f8f5ef;
+    border: 2px solid #1c3330;
     border-radius: 50%;
     cursor: se-resize;
     z-index: 10;
@@ -338,7 +338,7 @@ body {
     width: 14px;
     height: 14px;
     background: #a47ac4;
-    border: 2px solid #f8f5ef;
+    border: 2px solid #1c3330;
     border-radius: 50%;
     cursor: grab;
     z-index: 10;
@@ -388,7 +388,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #c4c0b6;
+    color: #3a6058;
     font-size: 0.88rem;
     font-family: system-ui, sans-serif;
     pointer-events: none;
