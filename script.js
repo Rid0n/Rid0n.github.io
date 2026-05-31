@@ -50,8 +50,10 @@ Still, I imagine you would be:
 # <p class="center"> what we'd do
 </p>
 
-<p class="center">colorhunting, theme parties, travel on a whim, have sleepovers, talk dreams and nightmares, come unannounced to my door and be welcome, help eachother with anything large and small, be there, care, support, do cringe, make reels, sleep on the floor, talk to strangers, burst into acting spontaneously, frolic, have cocoa ceremonies, sing and finally, reinvent the essence of what it means to be friends a thousand times over
-</p>
+<div class="tag-cloud">
+<span>colorhunting</span><span>theme parties</span><span>travel on a whim</span><span>sleepovers</span><span>talk dreams and nightmares</span><span>come unannounced and be welcome</span><span>help each other with anything</span><span>be there</span><span>care</span><span>support</span><span>do cringe</span><span>make reels</span><span>sleep on the floor</span><span>talk to strangers</span><span>burst into acting spontaneously</span><span>frolic</span><span>cocoa ceremonies</span><span>sing</span><span>reinvent what it means to be friends a thousand times over</span>
+</div>
+
 <!--
 # #TODOs
 
