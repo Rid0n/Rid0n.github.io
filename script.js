@@ -49,13 +49,14 @@ I don't feel like imposing much restrictions, who tf can tell why people vibe or
 
 colorhunting, theme parties, travel on a whim, have sleepovers, talk dreams and nightmares, come unannounced to my door and be welcome, help eachother with anything large and small, be there, care, support, do cringe, make reels, sleep on the floor, talk to strangers, burst into acting spontaneously, frolic, have cocoa ceremonies, sing and finally, reinvent the essence of what it means to be friends a thousand times over
 
-
+<!--
 # #TODOs
 
 - finalize me-layout by: adding delights, being happy with it all
 - write intro(motivation+me) text, write inter(you + we'd be upto shit like x) text, write ender(text me) text
 - introduce we do shit collage: collect lil' guys and friendship examples
-- finalize everything
+- finalize everything 
+-->
 `;
 
 const MARKDOWN_TEXT_3 = `
