@@ -34,9 +34,11 @@ Anyhoo! Let's start with a collection of things that made me who I am so you can
 `;
 
 const MARKDOWN_TEXT_2 = `
-# who you are
+# <p class="center"> who you are
+</p>
 
-I don't feel like imposing much restrictions, who tf can tell why people vibe or not, feel free to disregard. Still, I imagine you would be:
+I don't feel like imposing much restrictions, who tf can tell why people vibe or not, feel free to disregard.  
+Still, I imagine you would be:
 
 - kind
 - smart
@@ -45,10 +47,11 @@ I don't feel like imposing much restrictions, who tf can tell why people vibe or
 - a transient, shifting being
 - leading your life, not letting it just happen to you
 
-# what we'd do
+# <p class="center"> what we'd do
+</p>
 
-colorhunting, theme parties, travel on a whim, have sleepovers, talk dreams and nightmares, come unannounced to my door and be welcome, help eachother with anything large and small, be there, care, support, do cringe, make reels, sleep on the floor, talk to strangers, burst into acting spontaneously, frolic, have cocoa ceremonies, sing and finally, reinvent the essence of what it means to be friends a thousand times over
-
+<p class="center">colorhunting, theme parties, travel on a whim, have sleepovers, talk dreams and nightmares, come unannounced to my door and be welcome, help eachother with anything large and small, be there, care, support, do cringe, make reels, sleep on the floor, talk to strangers, burst into acting spontaneously, frolic, have cocoa ceremonies, sing and finally, reinvent the essence of what it means to be friends a thousand times over
+</p>
 <!--
 # #TODOs
 
