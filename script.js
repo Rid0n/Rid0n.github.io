@@ -2,35 +2,35 @@
 // Authoring: IndexedDB + localStorage, one store per collage.
 
 const MARKDOWN_TEXT = `
-# hi, i'm serge!
+# hi, i'm serge! 💫  
 (any/all, 24yo, ru/en)
 
-You've found my plea for close meaningful friendship I find myself in severe lack of.
-Perhaps, you do too. Maybe creating an entire website for that sole purpose is a bit much, but I *am* much and I'm tired of nonchalance.
+You've found my plea for close meaningful friendship I find myself in severe lack of.  
+Perhaps, you do too.
+
+<p class="fine-print">(maybe creating an entire website for that sole purpose is a bit much and a bit weird, but I <em>am</em> much and weird and I'm deathly tired of nonchalance)</p>
 
 ## The following will include:
 - A rant on adult friendships
 - An introduction to me
 - A draft of you
 - Type of shit we'd be up to
+- A way to reach me
 
-(best viewed on larger screens)
+**(best viewed on larger screens)**
 
 ## Rant
-I am sick to my stomach of how miserable and empty adult relationships are. The endless catchups? The all too familiar conversations running on repeat? Is it just me or does life just stop with work? This can not be all there is.
+I am sick to my stomach of how miserable and empty adult relationships are. Are we just meant to be satisfied with the endless catchups? The all too familiar conversations running on repeat? Is it just me or does life just stop with work? Where are the conversations that we used to have as kids? Where's the fun of invention and whimsy? This can not be all there is..
 
-Here's how I think friendships should be.
-I think meaning itself is only ever born of connection. I think individuality is a lie, it is us who'll save each other.
+We are not meant to merely cruise this existence alone, we're meant to brave it alongside people we love. Individuality is a lie, ultimately it is us who'll save each other. Meaning itself is *forged* in connection.
 
-A friend is someone whose hug has healing powers.
-Being friends should be about helping discover one another, reinvent yourself, be cradled in caring arms, have a haven safe from whatever storms, do projects together that have no purpose other than being cool.
-We should be friends the way friends in Ghibli movies are.
+We're somehow stuck doing such meaningless crap. We should be creating worlds, witnessing naked fire of souls, crying our hearts out and being embraced and comforted, champion kindness.
 
-*Henceforth, I throw down a vulnerable bid to connect.* The way it should be done. \n
-Is this weird? Is this too much? Is this absurd? For sure! if you got better ideas tho, do tell.
+And I am simply weak. I can not do it all without a friend by my side, nor do I want to. I am a bleak speck on my own, but a supernova under right eyes.
 
+*Henceforth, I throw down a vulnerable bid to connect.* How it *should* be done. \n
 
-Anyhoo! Let's start with a collection of things that made me who I am.
+Anyhoo! Let's start with a collection of things that made me who I am so you can get an idea of me.
 `;
 
 const MARKDOWN_TEXT_2 = `
@@ -39,9 +39,9 @@ const MARKDOWN_TEXT_2 = `
 I don't feel like imposing much restrictions, who tf can tell why people vibe or not, feel free to disregard. Still, I imagine you would be:
 
 - kind
-- smart, you're ravenous to knowledge
+- smart
 - stupid
-- sensitive as shit and intense
+- sensitive as shit, intense
 - a transient, shifting being
 - leading your life, not letting it just happen to you
 

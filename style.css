@@ -159,6 +159,14 @@ body {
     margin: 2rem 0;
 }
 
+/* ── Fine print ── */
+
+.fine-print {
+    font-size: 0.72rem;
+    color: #aaa;
+    line-height: 1.6;
+}
+
 /* ── Text alignment ── */
 
 .center { text-align: center; }
