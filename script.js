@@ -6,7 +6,7 @@ const MARKDOWN_TEXT = `
 (any/all, 24yo, ru/en)
 
 You've found my plea for close meaningful friendship I find myself in severe lack of.
-Perhaps, you do too.
+Perhaps, you do too. Maybe creating an entire website for that sole purpose is a bit much, but I *am* much and I'm tired of nonchalance.
 
 ## The following will include:
 - A rant on adult friendships
@@ -17,7 +17,7 @@ Perhaps, you do too.
 (best viewed on larger screens)
 
 ## Rant
-I am sick to my stomach of how miserable and empty   adult relationships are. The endless catchups? The all too familiar conversations running on repeat? Is it just me or does life just stop with work? This can not be all there is.
+I am sick to my stomach of how miserable and empty adult relationships are. The endless catchups? The all too familiar conversations running on repeat? Is it just me or does life just stop with work? This can not be all there is.
 
 Here's how I think friendships should be.
 I think meaning itself is only ever born of connection. I think individuality is a lie, it is us who'll save each other.
