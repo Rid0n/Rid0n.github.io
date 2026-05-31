@@ -5,8 +5,8 @@ const MARKDOWN_TEXT = `
 # hi, i'm serge! 💫  
 (any/all, 24yo, ru/en)
 
-You've found my plea for close meaningful friendship I find myself in severe lack of.  
-Perhaps, you do too.
+Thanks for scanning the random QR-code.   
+You've found my plea for close meaningful friendship I lack. Perhaps, you do too. 
 
 <p class="fine-print">(maybe creating an entire website for that sole purpose is a bit much and a bit weird, but I <em>am</em> much and weird and I'm deathly tired of nonchalance)</p>
 
@@ -24,7 +24,7 @@ I am sick to my stomach of how miserable and empty adult relationships are. Are 
 
 We are not meant to merely cruise this existence alone, we're meant to brave it alongside people we love. Individuality is a lie, ultimately it is us who'll save each other. Meaning itself is *forged* in connection.
 
-We're somehow stuck doing such meaningless crap. We should be creating worlds, witnessing naked fire of souls, crying our hearts out and being embraced and comforted, champion kindness.
+We're somehow stuck doing such meaningless crap. We should be creating worlds, witnessing naked fire of souls, crying our hearts out and being embraced and comforted, champion kindness. But also simply doing cool shit, visiting one another whenever, cooking dinner, just inhabiting the same space, embracing the quiet moments.
 
 And I am simply weak. I can not do it all without a friend by my side, nor do I want to. I am a bleak speck on my own, but a supernova under right eyes.
 
@@ -63,7 +63,7 @@ const MARKDOWN_TEXT_3 = `
 
 <p class="center">You've reached the endpoint! thank you.</p>
 
-<p class="center">I hope you have a rough idea of me and the friends I seek.</p>
+<p class="center">I hope you got a rough idea of me and the people I seek now.</p>
 
 <p class="center">If you feel like we'll vibe, text me on insta or tg - ||🍈serezhdipity||
 </p>
