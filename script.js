@@ -743,4 +743,17 @@ async function init() {
     }
 }
 
+// ── Last section scroll-grow ──────────────────────────────────────────────────
+
+function updateSection3Height() {
+    const el = document.getElementById('text-section-3');
+    if (!el) return;
+    const top      = el.getBoundingClientRect().top;
+    const progress = Math.max(0, Math.min(1, (window.innerHeight - top) / window.innerHeight));
+    el.style.minHeight = (20 + progress * 80) + 'vh';
+}
+
+window.addEventListener('scroll', updateSection3Height, { passive: true });
+updateSection3Height();
+
 init();

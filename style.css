@@ -83,7 +83,7 @@ body {
 }
 
 #text-section-3 {
-    min-height: 100vh;
+    min-height: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -226,8 +226,12 @@ body {
 
 /* ── Collage section ── */
 
-#collage-section,
-#collage-section-2 {
+#collage-section::before,
+#collage-section-2::before {
+    content: '';
+    display: block;
+    max-width: 660px;
+    margin: 0 auto;
     border-top: 1px solid #2e4a44;
 }
 
