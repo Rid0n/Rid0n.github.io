@@ -200,22 +200,83 @@ main {
 
 /* ── Experience ── */
 
+.exp-section {
+    padding: 8vh 0;
+    border-top: 1px solid var(--line);
+}
+
 .experience-list {
     list-style: none;
-    counter-reset: none;
 }
 
 .exp {
+    position: relative;
+}
+
+/* The top line — spans the text column at rest, then unfurls across
+   the right column on hover/open to "fly" the flag at its tip. */
+.exp::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 58%;
+    background: var(--accent-soft);
+    transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.exp:hover::before,
+.exp.open::before {
+    width: 100%;
+}
+
+/* Hanging flag — an image that drops from the right tip of the line. */
+.exp-flag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 96px;
+    transform-origin: top right;
+    transform: translateY(-6px);
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+    transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: 0.1s;
+}
+
+.exp:hover .exp-flag {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Once open, the slideshow takes over — the flag steps aside. */
+.exp.open .exp-flag {
+    opacity: 0;
+    transition-delay: 0s;
+}
+
+/* Clickable header row (a button, reset to look like text). */
+.exp-row {
+    width: 100%;
     display: flex;
     align-items: baseline;
     gap: 1.4rem;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--line);
-    transition: padding-left 0.25s ease, color 0.25s ease;
+    padding: 1.7rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    color: inherit;
+    font-family: inherit;
+    transition: padding-left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.exp:first-child {
-    border-top: 1px solid var(--line);
+.exp:hover .exp-row,
+.exp.open .exp-row {
+    padding-left: 0.6rem;
 }
 
 .exp-num {
@@ -231,14 +292,193 @@ main {
     font-weight: 500;
     letter-spacing: -0.015em;
     color: var(--text);
-}
-
-.exp:hover {
-    padding-left: 0.6rem;
+    transition: color 0.25s ease;
 }
 
 .exp:hover .exp-title {
     color: var(--accent);
+}
+
+/* Expand/collapse affordance — a "+" that turns into "×" when open. */
+.exp-toggle {
+    margin-left: auto;
+    align-self: center;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    flex: none;
+    opacity: 0.6;
+    transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.exp-toggle::before,
+.exp-toggle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 1.5px;
+    background: var(--accent);
+    transform: translate(-50%, -50%);
+}
+
+.exp-toggle::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* Hide the toggle while the flag is flying, bring it back (rotated) when open. */
+.exp:hover .exp-toggle {
+    opacity: 0;
+}
+
+.exp.open .exp-toggle {
+    opacity: 0.6;
+    transform: rotate(45deg);
+}
+
+/* Expanding panel: achievements left, slideshow right. */
+.exp-panel {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 44px;
+    align-items: start;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.4s ease,
+                padding 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.exp.open .exp-panel {
+    max-height: 760px;
+    opacity: 1;
+    padding: 0.4rem 0 3rem;
+}
+
+.exp-meta {
+    font-size: 0.85rem;
+    color: var(--accent-soft);
+    letter-spacing: 0.02em;
+    margin-bottom: 1.2rem;
+}
+
+.exp-points ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.exp-points li {
+    position: relative;
+    padding-left: 1.3rem;
+    font-size: 1.02rem;
+    line-height: 1.65;
+    color: var(--text-muted);
+}
+
+.exp-points li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+}
+
+/* ── Slideshow ── */
+
+.slides {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+.exp-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+}
+
+.exp-slide.active {
+    opacity: 1;
+}
+
+.slide-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.slide-controls .prev,
+.slide-controls .next {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+    transition: color 0.2s ease;
+}
+
+.slide-controls .prev:hover,
+.slide-controls .next:hover {
+    color: var(--accent);
+}
+
+.dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background: var(--line);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dot:hover {
+    background: var(--accent-soft);
+}
+
+.dot.active {
+    background: var(--accent);
+    transform: scale(1.25);
+}
+
+/* ── Placeholder boxes (swap the inner .ph for an <img> later) ── */
+
+.ph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 8px;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--accent-soft);
+    background: linear-gradient(135deg, #2f3a37, #283230);
+    border: 1px solid var(--line);
+}
+
+.ph-flag {
+    font-size: 0.72rem;
 }
 
 /* ── Responsive ── */
@@ -257,5 +497,19 @@ main {
     .tool-group {
         grid-template-columns: 1fr;
         gap: 12px;
+    }
+
+    /* No room for the hanging flag on narrow screens. */
+    .exp-flag {
+        display: none;
+    }
+
+    .exp-panel {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .exp.open .exp-panel {
+        max-height: 1100px;
     }
 }

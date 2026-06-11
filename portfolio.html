@@ -96,23 +96,163 @@
         </section>
 
         <!-- ── Experience ── -->
-        <section class="block" id="experience">
-            <div class="block-text">
-                <h2 class="section-label">Selected work</h2>
+        <section id="experience" class="exp-section">
+            <h2 class="section-label">Selected work</h2>
 
-                <ol class="experience-list">
-                    <li class="exp"><span class="exp-num">01</span><span class="exp-title">Unitree Go2 Quadruped</span></li>
-                    <li class="exp"><span class="exp-num">02</span><span class="exp-title">Retail Mobile Robots</span></li>
-                    <li class="exp"><span class="exp-num">03</span><span class="exp-title">Autonomous Drone &amp; Mars Rover</span></li>
-                    <li class="exp"><span class="exp-num">04</span><span class="exp-title">Picosatellite</span></li>
-                </ol>
-            </div>
+            <ol class="experience-list">
 
-            <!-- right column reserved for imagery -->
-            <div class="block-media" aria-hidden="true"></div>
+                <!-- 01 ─ Unitree Go2 -->
+                <li class="exp">
+                    <span class="exp-flag" aria-hidden="true"><span class="ph ph-flag">Go2</span></span>
+                    <button type="button" class="exp-row">
+                        <span class="exp-num">01</span>
+                        <span class="exp-title">Unitree Go2 Quadruped</span>
+                        <span class="exp-toggle" aria-hidden="true"></span>
+                    </button>
+                    <div class="exp-panel">
+                        <div class="exp-points">
+                            <p class="exp-meta">Palisade Research · Jetson Orin, ROS2, Nav2, C++, Python, Docker</p>
+                            <ul>
+                                <li>Designed the full autonomy stack for autonomous perimeter patrol on a Unitree Go2 quadruped.</li>
+                                <li>Fused LiDAR SLAM, Nav2 navigation, YOLOv8 person detection and BehaviorTree reactive behaviors.</li>
+                                <li>Calibrated LiDAR extrinsics and denoised point clouds for reliable mapping and navigation.</li>
+                                <li>Ran AI-safety shutdown-avoidance trials with an LLM in control of the robot.</li>
+                            </ul>
+                        </div>
+                        <div class="exp-show" aria-hidden="true">
+                            <div class="slides">
+                                <div class="exp-slide active"><span class="ph">Go2 on patrol</span></div>
+                                <div class="exp-slide"><span class="ph">Live SLAM map</span></div>
+                                <div class="exp-slide"><span class="ph">Person-detection overlay</span></div>
+                            </div>
+                            <div class="slide-controls">
+                                <button type="button" class="prev" aria-label="Previous slide">‹</button>
+                                <div class="dots">
+                                    <button type="button" class="dot active" aria-label="Slide 1"></button>
+                                    <button type="button" class="dot" aria-label="Slide 2"></button>
+                                    <button type="button" class="dot" aria-label="Slide 3"></button>
+                                </div>
+                                <button type="button" class="next" aria-label="Next slide">›</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 02 ─ Retail Mobile Robots -->
+                <li class="exp">
+                    <span class="exp-flag" aria-hidden="true"><span class="ph ph-flag">Retail</span></span>
+                    <button type="button" class="exp-row">
+                        <span class="exp-num">02</span>
+                        <span class="exp-title">Retail Mobile Robots</span>
+                        <span class="exp-toggle" aria-hidden="true"></span>
+                    </button>
+                    <div class="exp-panel">
+                        <div class="exp-points">
+                            <p class="exp-meta">Coalescent Mobile Robotics · C++, ROS2, Nav2, Docker, Linux</p>
+                            <ul>
+                                <li>Built and maintained the Nav2 Behavior Tree architecture driving motion planning for a wheeled robot.</li>
+                                <li>Implemented 10 mission-specific robot behaviors in C++.</li>
+                                <li>Overhauled the Behavior Trees package to tie 20+ packages together — more testable, robust, with stats collection.</li>
+                                <li>Ran on-site field testing and debugging throughout live deployments.</li>
+                            </ul>
+                        </div>
+                        <div class="exp-show" aria-hidden="true">
+                            <div class="slides">
+                                <div class="exp-slide active"><span class="ph">Robot in store</span></div>
+                                <div class="exp-slide"><span class="ph">Behavior Tree</span></div>
+                                <div class="exp-slide"><span class="ph">Field test</span></div>
+                            </div>
+                            <div class="slide-controls">
+                                <button type="button" class="prev" aria-label="Previous slide">‹</button>
+                                <div class="dots">
+                                    <button type="button" class="dot active" aria-label="Slide 1"></button>
+                                    <button type="button" class="dot" aria-label="Slide 2"></button>
+                                    <button type="button" class="dot" aria-label="Slide 3"></button>
+                                </div>
+                                <button type="button" class="next" aria-label="Next slide">›</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 03 ─ Drone & Mars Rover -->
+                <li class="exp">
+                    <span class="exp-flag" aria-hidden="true"><span class="ph ph-flag">Drone</span></span>
+                    <button type="button" class="exp-row">
+                        <span class="exp-num">03</span>
+                        <span class="exp-title">Autonomous Drone &amp; Mars Rover</span>
+                        <span class="exp-toggle" aria-hidden="true"></span>
+                    </button>
+                    <div class="exp-panel">
+                        <div class="exp-points">
+                            <p class="exp-meta">Innopolis National Hackathon — Winner · ROS, C++, Python, OpenCV, Arduino, Jetson</p>
+                            <ul>
+                                <li>Wrote drone flight-control and computer-vision C++ to autonomously detect and collect colored cubes.</li>
+                                <li>Built Python/C++ software for a rover completing a simulated Mars mission — joystick control, drill, live camera feed.</li>
+                                <li>Integrated sensors across Arduino, Jetson and Raspberry Pi hardware.</li>
+                            </ul>
+                        </div>
+                        <div class="exp-show" aria-hidden="true">
+                            <div class="slides">
+                                <div class="exp-slide active"><span class="ph">Drone in flight</span></div>
+                                <div class="exp-slide"><span class="ph">Cube detection</span></div>
+                                <div class="exp-slide"><span class="ph">Mars rover</span></div>
+                            </div>
+                            <div class="slide-controls">
+                                <button type="button" class="prev" aria-label="Previous slide">‹</button>
+                                <div class="dots">
+                                    <button type="button" class="dot active" aria-label="Slide 1"></button>
+                                    <button type="button" class="dot" aria-label="Slide 2"></button>
+                                    <button type="button" class="dot" aria-label="Slide 3"></button>
+                                </div>
+                                <button type="button" class="next" aria-label="Next slide">›</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 04 ─ Picosatellite -->
+                <li class="exp">
+                    <span class="exp-flag" aria-hidden="true"><span class="ph ph-flag">CanSat</span></span>
+                    <button type="button" class="exp-row">
+                        <span class="exp-num">04</span>
+                        <span class="exp-title">Picosatellite</span>
+                        <span class="exp-toggle" aria-hidden="true"></span>
+                    </button>
+                    <div class="exp-panel">
+                        <div class="exp-points">
+                            <p class="exp-meta">National CanSat Competition (MSU) — Finalist · C, ATmega, I2C/SPI/UART</p>
+                            <ul>
+                                <li>Led a team of three building a satellite-in-a-can that flew 1 km and returned data.</li>
+                                <li>Wrote low-level C firmware for an ATmega MCU linking flight sensors, radio and memory over I2C, SPI and UART.</li>
+                                <li>Calibrated the accelerometer and barometer.</li>
+                            </ul>
+                        </div>
+                        <div class="exp-show" aria-hidden="true">
+                            <div class="slides">
+                                <div class="exp-slide active"><span class="ph">CanSat assembled</span></div>
+                                <div class="exp-slide"><span class="ph">Launch</span></div>
+                                <div class="exp-slide"><span class="ph">Sensor data</span></div>
+                            </div>
+                            <div class="slide-controls">
+                                <button type="button" class="prev" aria-label="Previous slide">‹</button>
+                                <div class="dots">
+                                    <button type="button" class="dot active" aria-label="Slide 1"></button>
+                                    <button type="button" class="dot" aria-label="Slide 2"></button>
+                                    <button type="button" class="dot" aria-label="Slide 3"></button>
+                                </div>
+                                <button type="button" class="next" aria-label="Next slide">›</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+            </ol>
         </section>
 
     </main>
+
+    <script src="portfolio.js"></script>
 
 </body>
 </html>
