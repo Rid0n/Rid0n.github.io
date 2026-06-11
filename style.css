@@ -94,7 +94,7 @@ body {
 #markdown-content h1,
 #markdown-content-2 h1,
 #markdown-content-3 h1 {
-    font-size: 3.2rem;
+    font-size: 2.1rem;
     font-weight: normal;
     letter-spacing: -0.02em;
     margin-bottom: 1.1rem;
@@ -103,12 +103,20 @@ body {
 #markdown-content h2,
 #markdown-content-2 h2,
 #markdown-content-3 h2 {
-    font-size: 0.9rem;
+    font-size: 1.7rem;
     font-weight: normal;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    letter-spacing: -0.01em;
     color: #6aaa8e;
     margin: 2.2rem 0 0.7rem;
+}
+
+.big-h2 {
+    font-size: 3.2rem;
+    font-weight: normal;
+    letter-spacing: -0.02em;
+    color: #e8edea;
+    margin: 2.2rem 0 0.7rem;
+    text-transform: none;
 }
 
 #markdown-content h3,
