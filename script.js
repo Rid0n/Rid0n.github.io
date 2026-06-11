@@ -5,10 +5,10 @@ const MARKDOWN_TEXT = `
 # hi, i'm serge! 💫  
 (any/all, 24yo, ru/en)
 
-Thanks for scanning the random QR-code.   
+Nice to meet you, stranger    
 You've found my plea for close meaningful friendship I lack. Perhaps, you do too. 
 
-<p class="fine-print">(maybe creating an entire website for that sole purpose is a bit much and a bit weird, but I <em>am</em> much and weird and I'm deathly tired of nonchalance)</p>
+<p class="fine-print"><strong>(maybe creating an entire website for that sole purpose is a bit much and a bit weird, <br> but I <em>am</em> much and weird and I'm deathly tired of nonchalance)</strong></p>
 
 ## The following will include:
 - A rant on adult friendships
@@ -17,7 +17,7 @@ You've found my plea for close meaningful friendship I lack. Perhaps, you do too
 - Type of shit we'd be up to
 - A way to reach me
 
-**(best viewed on larger screens)**
+<p class="fine-print"><strong>(best viewed on larger screens)</strong></p>
 
 ## Rant
 I am sick to my stomach of how miserable and empty adult relationships are. Are we just meant to be satisfied with the endless catchups? The all too familiar conversations running on repeat? Is it just me or does life just stop with work? Where are the conversations that we used to have as kids? Where's the fun of invention and whimsy? This can not be all there is..
