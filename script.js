@@ -5,7 +5,7 @@ const MARKDOWN_TEXT = `
 # hi, i'm serge! 💫  
 (any/all, 24yo, ru/en)
 
-Nice to meet you, stranger    
+Nice to meet you, stranger👀    
 You've found my plea for close meaningful friendship I lack. Perhaps, you do too. 
 
 <p class="fine-print"><strong>(maybe creating an entire website for that sole purpose is a bit much and a bit weird, <br> but I <em>am</em> much and weird and I'm deathly tired of nonchalance)</strong></p>
