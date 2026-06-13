@@ -236,8 +236,8 @@ main {
     position: absolute;
     top: 0;
     right: 0;
-    width: 150px;
-    height: 96px;
+    width: 210px;
+    height: 134px;
     transform-origin: top right;
     transform: translateY(-6px);
     opacity: 0;
@@ -257,6 +257,18 @@ main {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+/* Combined project — two title images side by side in one flag. */
+.exp-flag--dual {
+    width: 280px;
+    display: flex;
+    gap: 2px;
+}
+
+.exp-flag--dual img {
+    flex: 1 1 0;
+    min-width: 0;
 }
 
 /* Once open, the slideshow takes over — the flag steps aside. */
@@ -511,6 +523,12 @@ main {
 
 .ph-flag {
     font-size: 0.72rem;
+}
+
+/* Serena is a tall portrait shot — bias the crop low (but not all the way)
+   so the frame starts around the robot and trims the empty top. */
+img[src$="serena_1.jpg"] {
+    object-position: center 72%;
 }
 
 /* ── Responsive ── */
