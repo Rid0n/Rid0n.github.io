@@ -252,6 +252,13 @@ main {
     transform: translateY(0);
 }
 
+.exp-flag img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 /* Once open, the slideshow takes over — the flag steps aside. */
 .exp.open .exp-flag {
     opacity: 0;
@@ -403,11 +410,36 @@ main {
     position: absolute;
     inset: 0;
     opacity: 0;
+    pointer-events: none;   /* inactive slides must not intercept clicks/scroll */
     transition: opacity 0.45s ease;
 }
 
 .exp-slide.active {
     opacity: 1;
+    pointer-events: auto;
+}
+
+/* Real media is cropped to fill the frame. */
+.exp-slide video,
+.exp-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #1d2422;
+    display: block;
+}
+
+/* The embedded tweet can run taller than the frame — let it scroll. */
+.tweet-slide {
+    overflow-y: auto;
+    background: #1d2422;
+    display: flex;
+    justify-content: center;
+    padding: 6px 0;
+}
+
+.tweet-slide .twitter-tweet {
+    margin: 0 auto !important;
 }
 
 .slide-controls {

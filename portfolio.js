@@ -10,6 +10,12 @@ document.querySelectorAll('.exp').forEach((exp) => {
             if (other !== exp) other.classList.remove('open');
         });
         exp.classList.toggle('open', willOpen);
+        if (willOpen) {
+            // Play the visible slide's video; pause everything in collapsed panels.
+            exp.querySelector('.exp-slide.active video')?.play().catch(() => {});
+        } else {
+            exp.querySelectorAll('video').forEach((v) => v.pause());
+        }
     });
 
     // ── Slideshow ──
@@ -20,7 +26,12 @@ document.querySelectorAll('.exp').forEach((exp) => {
     let i = 0;
     const show = (n) => {
         i = (n + slides.length) % slides.length;
-        slides.forEach((s, k) => s.classList.toggle('active', k === i));
+        slides.forEach((s, k) => {
+            const active = k === i;
+            s.classList.toggle('active', active);
+            const vid = s.querySelector('video');
+            if (vid) active ? vid.play().catch(() => {}) : vid.pause();
+        });
         dots.forEach((d, k) => d.classList.toggle('active', k === i));
     };
 

@@ -103,7 +103,7 @@
 
                 <!-- 01 ─ Unitree Go2 -->
                 <li class="exp">
-                    <span class="exp-flag" aria-hidden="true"><span class="ph ph-flag">Go2</span></span>
+                    <span class="exp-flag" aria-hidden="true"><img src="media/go2_titlecard.jpg" alt=""></span>
                     <button type="button" class="exp-row">
                         <span class="exp-num">01</span>
                         <span class="exp-title">Unitree Go2 Quadruped</span>
@@ -113,17 +113,23 @@
                         <div class="exp-points">
                             <p class="exp-meta">Palisade Research · Jetson Orin, ROS2, Nav2, C++, Python, Docker</p>
                             <ul>
-                                <li>Designed the full autonomy stack for autonomous perimeter patrol on a Unitree Go2 quadruped.</li>
+                                <li>Designed the full autonomy stack for autonomous office perimeter patrol on a Unitree Go2 quadruped.</li>
                                 <li>Fused LiDAR SLAM, Nav2 navigation, YOLOv8 person detection and BehaviorTree reactive behaviors.</li>
                                 <li>Calibrated LiDAR extrinsics and denoised point clouds for reliable mapping and navigation.</li>
                                 <li>Ran AI-safety shutdown-avoidance trials with an LLM in control of the robot.</li>
+                                <li>Directed shooting of Capstone Video that amassed 1.3M views on X</li>
                             </ul>
                         </div>
-                        <div class="exp-show" aria-hidden="true">
+                        <div class="exp-show">
                             <div class="slides">
-                                <div class="exp-slide active"><span class="ph">Go2 on patrol</span></div>
-                                <div class="exp-slide"><span class="ph">Live SLAM map</span></div>
-                                <div class="exp-slide"><span class="ph">Person-detection overlay</span></div>
+                                <div class="exp-slide tweet-slide active">
+                                    <blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" data-conversation="none" data-align="center">
+                                        <a href="https://twitter.com/PalisadeAI/status/2022085855943569852"></a>
+                                    </blockquote>
+                                </div>
+                                <div class="exp-slide"><video src="media/dog_2.mp4" controls muted loop playsinline preload="metadata"></video></div>
+                                <div class="exp-slide"><img src="media/dog_3.jpg" alt="Unitree Go2 quadruped" loading="lazy"></div>
+                                <div class="exp-slide"><video src="media/dog_4.mp4" controls muted loop playsinline preload="metadata"></video></div>
                             </div>
                             <div class="slide-controls">
                                 <button type="button" class="prev" aria-label="Previous slide">‹</button>
@@ -131,6 +137,7 @@
                                     <button type="button" class="dot active" aria-label="Slide 1"></button>
                                     <button type="button" class="dot" aria-label="Slide 2"></button>
                                     <button type="button" class="dot" aria-label="Slide 3"></button>
+                                    <button type="button" class="dot" aria-label="Slide 4"></button>
                                 </div>
                                 <button type="button" class="next" aria-label="Next slide">›</button>
                             </div>
@@ -152,7 +159,7 @@
                             <ul>
                                 <li>Built and maintained the Nav2 Behavior Tree architecture driving motion planning for a wheeled robot.</li>
                                 <li>Implemented 10 mission-specific robot behaviors in C++.</li>
-                                <li>Overhauled the Behavior Trees package to tie 20+ packages together — more testable, robust, with stats collection.</li>
+                                <li>Overhauled the Behavior Trees package to tie 20+ packages together - making it more testable, robust, with stats collection.</li>
                                 <li>Ran on-site field testing and debugging throughout live deployments.</li>
                             </ul>
                         </div>
@@ -252,6 +259,7 @@
 
     </main>
 
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="portfolio.js"></script>
 
 </body>
