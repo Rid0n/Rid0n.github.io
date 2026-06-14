@@ -5,9 +5,8 @@ const MARKDOWN_TEXT = `
 # hi, i'm serge! 💫  
 (any/all, 24yo, ru/en)
 
-how do you do, stranger?
-   
-You've found my plea for close meaningful friendship I lack. Perhaps, you do too. 
+<em>"how do you do, stranger?"</em><br>
+a plea for close meaningful friendship. perhaps, you seek it too. 
 
 <p class="fine-print"><strong>(maybe creating an entire website for that sole purpose is a bit much and a bit weird, <br> but I <em>am</em> much and weird and I'm deathly tired of nonchalance)</strong></p>
 
@@ -21,15 +20,15 @@ You've found my plea for close meaningful friendship I lack. Perhaps, you do too
 <p class="fine-print"><strong>(best viewed on larger screens)</strong></p>
 
 ## Rant
-I am sick to my stomach of how miserable and empty adult relationships are. Are we just meant to be satisfied with the endless catchups? The all too familiar conversations running on repeat? Is it just me or does life just stop with work? Where are the conversations that we used to have as kids? Where's the fun of invention and whimsy? This can not be all there is..
+I am sick of how miserable and empty adult relationships are. Are we just meant to be satisfied with the endless catchups? The all too familiar conversations running on repeat? Is it just me or does life just stop with work? Where are the conversations that we used to have as kids? Where's the fun of invention and whimsy? This can not be all there is..
 
 We are not meant to merely cruise this existence alone, we're meant to brave it alongside people we love. Individuality is a lie, ultimately it is us who'll save each other. Meaning itself is *forged* in connection.
 
 We're somehow stuck doing such meaningless crap. We should be creating worlds, witnessing naked fire of souls, crying our hearts out and being embraced and comforted, champion kindness. But also simply doing cool shit, visiting one another whenever, cooking dinner, just inhabiting the same space, embracing the quiet moments.
 
-And I am simply weak. I can not do it all without a friend by my side, nor do I want to. I am a bleak speck on my own, but a supernova under right eyes.
+And I am simply weak. I am not a creature of solitude, I want to witness and be witnessed. I am but a bleak speck, yet a supernova under right eyes.
 
-*Henceforth, I throw down a vulnerable bid to connect.* How it *should* be done. \n
+*Henceforth, I throw down a vulnerable bid to connect.*
 
 Anyhoo! Let's start with a collection of things that made me who I am so you can get an idea of me.
 `;
@@ -67,11 +66,11 @@ Still, I imagine you would be:
 
 const MARKDOWN_TEXT_3 = `
 
-<p class="center">You've reached the endpoint! thank you.</p>
+<p class="center">you've reached the endpoint! thankies thanks.</p>
 
 <p class="center">I hope you got a rough idea of me and the people I seek now.</p>
 
-<p class="center">If you feel like we'll vibe, text me on insta or tg - ||🍈serezhdipity||
+<p class="center">If you feel like we'll vibe, text me. something weird will do. insta/tg - ||🍈serezhdipity||
 </p>
 `;
 
