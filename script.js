@@ -66,7 +66,7 @@ Still, I imagine you would be:
 
 const MARKDOWN_TEXT_3 = `
 
-<p class="center">you've reached the endpoint! thankies thanks.</p>
+<p class="center">you've reached the endpoint! thankie thanks.</p>
 
 <p class="center">I hope you got a rough idea of me and the people I seek now.</p>
 
