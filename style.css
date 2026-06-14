@@ -86,9 +86,20 @@ body {
     min-height: 20vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     padding-top: 10vh;
     padding-bottom: 10vh;
+}
+
+.sig-avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 1.8rem;
+    box-shadow: 0 0 0 2px #2e4a44;
 }
 
 #markdown-content h1,

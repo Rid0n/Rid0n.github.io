@@ -70,7 +70,7 @@ const MARKDOWN_TEXT_3 = `
 
 <p class="center">I hope you got a rough idea of me and the people I seek now.</p>
 
-<p class="center">If you feel like we'll vibe, text me. something weird will do. insta/tg - ||🍈serezhdipity||
+<p class="center">If you feel like we'll vibe, text me. something weird will do. <br> ||🍈serezhdipity||
 </p>
 `;
 
