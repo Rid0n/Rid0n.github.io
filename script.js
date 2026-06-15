@@ -8,6 +8,8 @@ const MARKDOWN_TEXT = `
 <em>"how do you do, stranger?"</em><br>
 a plea for close meaningful friendship. perhaps, you seek it too. 
 
+<p class="fine-print"><strong>(best viewed on larger screens)</strong></p>
+
 <p class="fine-print"><strong>(maybe creating an entire website for that sole purpose is a bit much and a bit weird, <br> but I <em>am</em> much and weird and I'm deathly tired of nonchalance)</strong></p>
 
 ## The following will include:
@@ -16,8 +18,6 @@ a plea for close meaningful friendship. perhaps, you seek it too.
 - A draft of you
 - Type of shit we'd be up to
 - A way to reach me
-
-<p class="fine-print"><strong>(best viewed on larger screens)</strong></p>
 
 ## Rant
 I am sick of how miserable and empty adult relationships are. Are we just meant to be satisfied with the endless catchups? The all too familiar conversations running on repeat? Is it just me or does life just stop with work? Where are the conversations that we used to have as kids? Where's the fun of invention and whimsy? This can not be all there is..
