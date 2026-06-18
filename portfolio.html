@@ -15,6 +15,37 @@
         <p class="hero-title">Robotics Software Engineer</p>
     </header>
 
+    <!-- ── Projects showcase ── -->
+    <section id="projects" class="cf-section">
+        <h2 class="cf-header">Projects Showcase</h2>
+
+        <div class="coverflow" tabindex="0">
+            <button type="button" class="cf-nav cf-prev" aria-label="Previous project">‹</button>
+
+            <div class="cf-stage">
+                <button type="button" class="cf-card">
+                    <img src="media/go2_titlecard.jpg" alt="Unitree Go2 quadruped">
+                    <span class="cf-flag">Unitree Go2</span>
+                </button>
+                <button type="button" class="cf-card">
+                    <img src="media/serena_1.jpg" alt="Serena retail robot">
+                    <span class="cf-flag">Retail Mobile Robots</span>
+                </button>
+                <button type="button" class="cf-card cf-card--dual">
+                    <img src="media/rover.jpg" alt="Mars rover">
+                    <img src="media/drone.jpg" alt="Autonomous drone">
+                    <span class="cf-flag">Drone &amp; Mars Rover</span>
+                </button>
+                <button type="button" class="cf-card">
+                    <img src="media/sat1.jpg" alt="Picosatellite">
+                    <span class="cf-flag">Picosatellite</span>
+                </button>
+            </div>
+
+            <button type="button" class="cf-nav cf-next" aria-label="Next project">›</button>
+        </div>
+    </section>
+
     <!-- ── Toolkit ── -->
     <section class="toolkit">
         <div class="tool-group">
@@ -95,177 +126,8 @@
             <div class="block-media" aria-hidden="true"></div>
         </section>
 
-        <!-- ── Experience ── -->
-        <section id="experience" class="exp-section">
-            <h2 class="section-label">Selected work</h2>
-
-            <ol class="experience-list">
-
-                <!-- 01 ─ Unitree Go2 -->
-                <li class="exp">
-                    <span class="exp-flag" aria-hidden="true"><img src="media/go2_titlecard.jpg" alt=""></span>
-                    <button type="button" class="exp-row">
-                        <span class="exp-num">01</span>
-                        <span class="exp-title">Unitree Go2 Quadruped</span>
-                        <span class="exp-toggle" aria-hidden="true"></span>
-                    </button>
-                    <div class="exp-panel">
-                        <div class="exp-points">
-                            <p class="exp-meta">Palisade Research · Jetson Orin, ROS2, Nav2, C++, Python, Docker</p>
-                            <ul>
-                                <li>Designed the full autonomy stack for autonomous office perimeter patrol on a Unitree Go2 quadruped.</li>
-                                <li>Fused LiDAR SLAM, Nav2 navigation, YOLOv8 person detection and BehaviorTree reactive behaviors.</li>
-                                <li>Calibrated LiDAR extrinsics and denoised point clouds for reliable mapping and navigation.</li>
-                                <li>Ran AI-safety shutdown-avoidance trials with an LLM in control of the robot.</li>
-                                <li>Directed shooting of Capstone Video that amassed 1.3M views on X</li>
-                            </ul>
-                        </div>
-                        <div class="exp-show">
-                            <div class="slides">
-                                <div class="exp-slide tweet-slide active">
-                                    <blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" data-conversation="none" data-align="center">
-                                        <a href="https://twitter.com/PalisadeAI/status/2022085855943569852"></a>
-                                    </blockquote>
-                                </div>
-                                <div class="exp-slide"><video src="media/dog_2.mp4" controls muted loop playsinline preload="metadata"></video></div>
-                                <div class="exp-slide"><img src="media/dog_3.jpg" alt="Unitree Go2 quadruped" loading="lazy"></div>
-                                <div class="exp-slide"><video src="media/dog_4.mp4" controls muted loop playsinline preload="metadata"></video></div>
-                            </div>
-                            <div class="slide-controls">
-                                <button type="button" class="prev" aria-label="Previous slide">‹</button>
-                                <div class="dots">
-                                    <button type="button" class="dot active" aria-label="Slide 1"></button>
-                                    <button type="button" class="dot" aria-label="Slide 2"></button>
-                                    <button type="button" class="dot" aria-label="Slide 3"></button>
-                                    <button type="button" class="dot" aria-label="Slide 4"></button>
-                                </div>
-                                <button type="button" class="next" aria-label="Next slide">›</button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- 02 ─ Retail Mobile Robots -->
-                <li class="exp">
-                    <span class="exp-flag" aria-hidden="true"><img src="media/serena_1.jpg" alt=""></span>
-                    <button type="button" class="exp-row">
-                        <span class="exp-num">02</span>
-                        <span class="exp-title">Retail Mobile Robots</span>
-                        <span class="exp-toggle" aria-hidden="true"></span>
-                    </button>
-                    <div class="exp-panel">
-                        <div class="exp-points">
-                            <p class="exp-meta">Coalescent Mobile Robotics · C++, ROS2, Nav2, Docker, Linux</p>
-                            <ul>
-                                <li>Built and maintained the Nav2 Behavior Tree architecture driving motion planning for a wheeled robot.</li>
-                                <li>Implemented 10 mission-specific robot behaviors in C++.</li>
-                                <li>Overhauled the Behavior Trees package to tie 20+ packages together - making it more testable, robust, with stats collection.</li>
-                                <li>Ran on-site field testing and debugging throughout live deployments.</li>
-                            </ul>
-                        </div>
-                        <div class="exp-show">
-                            <div class="slides">
-                                <div class="exp-slide active"><img src="media/serena_1.jpg" alt="Serena retail robot" loading="lazy"></div>
-                                <div class="exp-slide"><video src="media/serena_2.mp4" controls muted loop playsinline preload="metadata"></video></div>
-                                <div class="exp-slide"><video src="media/serena_3.mp4" controls muted loop playsinline preload="metadata"></video></div>
-                            </div>
-                            <div class="slide-controls">
-                                <button type="button" class="prev" aria-label="Previous slide">‹</button>
-                                <div class="dots">
-                                    <button type="button" class="dot active" aria-label="Slide 1"></button>
-                                    <button type="button" class="dot" aria-label="Slide 2"></button>
-                                    <button type="button" class="dot" aria-label="Slide 3"></button>
-                                </div>
-                                <button type="button" class="next" aria-label="Next slide">›</button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- 03 ─ Drone & Mars Rover -->
-                <li class="exp">
-                    <span class="exp-flag exp-flag--dual" aria-hidden="true">
-                        <img src="media/rover.jpg" alt="">
-                        <img src="media/drone.jpg" alt="">
-                    </span>
-                    <button type="button" class="exp-row">
-                        <span class="exp-num">03</span>
-                        <span class="exp-title">Autonomous Drone &amp; Mars Rover</span>
-                        <span class="exp-toggle" aria-hidden="true"></span>
-                    </button>
-                    <div class="exp-panel">
-                        <div class="exp-points">
-                            <p class="exp-meta">Innopolis National Hackathon — Winner · ROS, C++, Python, OpenCV, Arduino, Jetson</p>
-                            <ul>
-                                <li>Wrote drone flight-control and computer-vision C++ to autonomously detect and collect colored cubes.</li>
-                                <li>Built Python/C++ software for a rover completing a simulated Mars mission — joystick control, drill, live camera feed.</li>
-                                <li>Integrated sensors across Arduino, Jetson and Raspberry Pi hardware.</li>
-                            </ul>
-                        </div>
-                        <div class="exp-show">
-                            <div class="slides">
-                                <div class="exp-slide active"><img src="media/rover.jpg" alt="Mars rover" loading="lazy"></div>
-                                <div class="exp-slide"><video src="media/rover_vid.mp4" controls muted loop playsinline preload="metadata"></video></div>
-                                <div class="exp-slide"><img src="media/drone.jpg" alt="Autonomous drone" loading="lazy"></div>
-                                <div class="exp-slide"><video src="media/drone_vid.mp4" controls muted loop playsinline preload="metadata"></video></div>
-                            </div>
-                            <div class="slide-controls">
-                                <button type="button" class="prev" aria-label="Previous slide">‹</button>
-                                <div class="dots">
-                                    <button type="button" class="dot active" aria-label="Slide 1"></button>
-                                    <button type="button" class="dot" aria-label="Slide 2"></button>
-                                    <button type="button" class="dot" aria-label="Slide 3"></button>
-                                    <button type="button" class="dot" aria-label="Slide 4"></button>
-                                </div>
-                                <button type="button" class="next" aria-label="Next slide">›</button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-                <!-- 04 ─ Picosatellite -->
-                <li class="exp">
-                    <span class="exp-flag" aria-hidden="true"><img src="media/sat1.jpg" alt=""></span>
-                    <button type="button" class="exp-row">
-                        <span class="exp-num">04</span>
-                        <span class="exp-title">Picosatellite</span>
-                        <span class="exp-toggle" aria-hidden="true"></span>
-                    </button>
-                    <div class="exp-panel">
-                        <div class="exp-points">
-                            <p class="exp-meta">National CanSat Competition (MSU) — Finalist · C, ATmega, I2C/SPI/UART</p>
-                            <ul>
-                                <li>Led a team of three building a satellite-in-a-can that flew 1 km and returned data.</li>
-                                <li>Wrote low-level C firmware for an ATmega MCU linking flight sensors, radio and memory over I2C, SPI and UART.</li>
-                                <li>Calibrated the accelerometer and barometer.</li>
-                            </ul>
-                        </div>
-                        <div class="exp-show">
-                            <div class="slides">
-                                <div class="exp-slide active"><img src="media/sat1.jpg" alt="Picosatellite electronics" loading="lazy"></div>
-                                <div class="exp-slide"><img src="media/sat2.jpg" alt="Picosatellite" loading="lazy"></div>
-                                <div class="exp-slide"><img src="media/sat3.jpg" alt="Picosatellite" loading="lazy"></div>
-                            </div>
-                            <div class="slide-controls">
-                                <button type="button" class="prev" aria-label="Previous slide">‹</button>
-                                <div class="dots">
-                                    <button type="button" class="dot active" aria-label="Slide 1"></button>
-                                    <button type="button" class="dot" aria-label="Slide 2"></button>
-                                    <button type="button" class="dot" aria-label="Slide 3"></button>
-                                </div>
-                                <button type="button" class="next" aria-label="Next slide">›</button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-            </ol>
-        </section>
-
     </main>
 
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="portfolio.js"></script>
-
 </body>
 </html>

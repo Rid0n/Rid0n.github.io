@@ -198,331 +198,141 @@ main {
     color: var(--text-muted);
 }
 
-/* ── Experience ── */
+/* ── Projects coverflow ──
+   Center card is full-size and on top; neighbours peek from behind,
+   scaled down and dimmed. JS positions each card by its offset. */
 
-.exp-section {
-    padding: 8vh 0;
-    border-top: 1px solid var(--line);
+.cf-section {
+    --cf-h: clamp(170px, 24vw, 280px);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4vh 28px 9vh;
+    text-align: center;
+    overflow-x: clip;   /* contain the orbiting side cards, keep vertical arc visible */
 }
 
-.experience-list {
-    list-style: none;
+.cf-header {
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 2.6rem;
 }
 
-.exp {
+.coverflow {
     position: relative;
+    margin-top: 2.2rem;
+    outline: none;
 }
 
-/* The top line — spans the text column at rest, then unfurls across
-   the right column on hover/open to "fly" the flag at its tip. */
-.exp::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 1px;
-    width: 58%;
-    background: var(--accent-soft);
-    transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.exp:hover::before,
-.exp.open::before {
+.cf-stage {
+    position: relative;
     width: 100%;
+    height: calc(var(--cf-h) * 2);
+    touch-action: pan-y;   /* let the page scroll vertically; we own horizontal drag */
 }
 
-/* Hanging flag — an image that drops from the right tip of the line. */
-.exp-flag {
+.cf-card {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 210px;
-    height: 134px;
-    transform-origin: top right;
-    transform: translateY(-6px);
-    opacity: 0;
-    pointer-events: none;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
-    transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-    transition-delay: 0.1s;
+    top: 50%;
+    left: 50%;
+    width: calc(var(--cf-h) * 1.5);
+    height: var(--cf-h);
+    padding: 0;
+    border: none;
+    background: #1d2422;
+    cursor: pointer;
+    overflow: visible;
+    transform-origin: center bottom;   /* grow upward from a fixed baseline */
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.4);
+    will-change: transform, opacity;
 }
 
-.exp:hover .exp-flag {
-    opacity: 1;
-    transform: translateY(0);
+.cf-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
 }
 
-.exp-flag img {
+.cf-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    pointer-events: none;
 }
 
-/* Combined project — two title images side by side in one flag. */
-.exp-flag--dual {
-    width: 280px;
+/* Combined project — two title images side by side in one card. */
+.cf-card--dual {
     display: flex;
     gap: 2px;
 }
 
-.exp-flag--dual img {
+.cf-card--dual img {
     flex: 1 1 0;
     min-width: 0;
 }
 
-/* Once open, the slideshow takes over — the flag steps aside. */
-.exp.open .exp-flag {
-    opacity: 0;
-    transition-delay: 0s;
+.cf-card.is-active {
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.5);
 }
 
-/* Clickable header row (a button, reset to look like text). */
-.exp-row {
-    width: 100%;
-    display: flex;
-    align-items: baseline;
-    gap: 1.4rem;
-    padding: 1.7rem 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    color: inherit;
-    font-family: inherit;
-    transition: padding-left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.exp:hover .exp-row,
-.exp.open .exp-row {
-    padding-left: 0.6rem;
-}
-
-.exp-num {
-    font-size: 0.9rem;
-    font-variant-numeric: tabular-nums;
-    color: var(--accent-soft);
-    letter-spacing: 0.05em;
-    min-width: 2ch;
-}
-
-.exp-title {
-    font-size: clamp(1.5rem, 3.4vw, 2.2rem);
-    font-weight: 500;
-    letter-spacing: -0.015em;
-    color: var(--text);
-    transition: color 0.25s ease;
-}
-
-.exp:hover .exp-title {
-    color: var(--accent);
-}
-
-/* Expand/collapse affordance — a "+" that turns into "×" when open. */
-.exp-toggle {
-    margin-left: auto;
-    align-self: center;
-    position: relative;
-    width: 16px;
-    height: 16px;
-    flex: none;
-    opacity: 0.6;
-    transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.exp-toggle::before,
-.exp-toggle::after {
-    content: '';
+/* Nav arrows */
+.cf-nav {
     position: absolute;
     top: 50%;
-    left: 50%;
-    width: 14px;
-    height: 1.5px;
-    background: var(--accent);
-    transform: translate(-50%, -50%);
-}
-
-.exp-toggle::after {
-    transform: translate(-50%, -50%) rotate(90deg);
-}
-
-/* Hide the toggle while the flag is flying, bring it back (rotated) when open. */
-.exp:hover .exp-toggle {
-    opacity: 0;
-}
-
-.exp.open .exp-toggle {
-    opacity: 0.6;
-    transform: rotate(45deg);
-}
-
-/* Expanding panel: achievements left, slideshow right. */
-.exp-panel {
-    display: grid;
-    grid-template-columns: 1fr 0.9fr;
-    gap: 44px;
-    align-items: start;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-                opacity 0.4s ease,
-                padding 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.exp.open .exp-panel {
-    max-height: 760px;
-    opacity: 1;
-    padding: 0.4rem 0 3rem;
-}
-
-.exp-meta {
-    font-size: 0.85rem;
-    color: var(--accent-soft);
-    letter-spacing: 0.02em;
-    margin-bottom: 1.2rem;
-}
-
-.exp-points ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-}
-
-.exp-points li {
-    position: relative;
-    padding-left: 1.3rem;
-    font-size: 1.02rem;
-    line-height: 1.65;
-    color: var(--text-muted);
-}
-
-.exp-points li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.7em;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent-soft);
-}
-
-/* ── Slideshow ── */
-
-.slides {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-}
-
-.exp-slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    pointer-events: none;   /* inactive slides must not intercept clicks/scroll */
-    transition: opacity 0.45s ease;
-}
-
-.exp-slide.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* Real media is cropped to fill the frame. */
-.exp-slide video,
-.exp-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background: #1d2422;
-    display: block;
-}
-
-/* The embedded tweet can run taller than the frame — let it scroll. */
-.tweet-slide {
-    overflow-y: auto;
-    background: #1d2422;
-    display: flex;
-    justify-content: center;
-    padding: 6px 0;
-}
-
-.tweet-slide .twitter-tweet {
-    margin: 0 auto !important;
-}
-
-.slide-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    margin-top: 14px;
-}
-
-.slide-controls .prev,
-.slide-controls .next {
+    transform: translateY(-50%);
+    z-index: 200;
     background: none;
     border: none;
     color: var(--text-muted);
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     line-height: 1;
     cursor: pointer;
-    padding: 0 4px;
+    padding: 0 10px;
     transition: color 0.2s ease;
 }
 
-.slide-controls .prev:hover,
-.slide-controls .next:hover {
+.cf-nav:hover {
     color: var(--accent);
 }
 
-.dots {
-    display: flex;
-    gap: 8px;
+.cf-prev { left: 4px; }
+.cf-next { right: 4px; }
+
+/* Project name — a flag tab pinned to each card's lower-left corner.
+   Quiet and tucked when off-centre, emphasised and risen when selected. */
+.cf-flag {
+    position: absolute;
+    left: 0;
+    bottom: 16px;
+    z-index: 2;
+    padding: 0.45rem 1.1rem;
+    font-size: clamp(0.8rem, 1.5vw, 1.05rem);
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    color: var(--text-muted);
+    background: rgba(28, 35, 33, 0.82);
+    opacity: 0.8;
+    transform: translateY(8px);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                background 0.4s ease, color 0.4s ease,
+                opacity 0.4s ease, box-shadow 0.4s ease;
 }
 
-.dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: none;
-    padding: 0;
-    background: var(--line);
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
+/* Hovering an off-centre card hints it's selectable. */
+.cf-card:not(.is-active):hover .cf-flag {
+    opacity: 1;
+    color: var(--text);
+    transform: translateY(0);
 }
 
-.dot:hover {
-    background: var(--accent-soft);
-}
-
-.dot.active {
-    background: var(--accent);
-    transform: scale(1.25);
-}
-
-/* ── Placeholder boxes (swap the inner .ph for an <img> later) ── */
-
-.ph {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    padding: 8px;
-    font-size: 0.78rem;
-    letter-spacing: 0.04em;
-    color: var(--accent-soft);
-    background: linear-gradient(135deg, #2f3a37, #283230);
-    border: 1px solid var(--line);
-}
-
-.ph-flag {
-    font-size: 0.72rem;
+/* The selected card's flag rises and picks up the sage tint. */
+.cf-card.is-active .cf-flag {
+    opacity: 1;
+    color: var(--text);
+    background: rgba(143, 171, 159, 0.24);
+    transform: translateY(0);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
 }
 
 /* Serena is a tall portrait shot — bias the crop low (but not all the way)
@@ -549,17 +359,7 @@ img[src$="serena_1.jpg"] {
         gap: 12px;
     }
 
-    /* No room for the hanging flag on narrow screens. */
-    .exp-flag {
-        display: none;
-    }
-
-    .exp-panel {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
-    .exp.open .exp-panel {
-        max-height: 1100px;
+    .cf-section {
+        --cf-h: clamp(160px, 46vw, 260px);
     }
 }
