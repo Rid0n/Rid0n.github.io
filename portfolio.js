@@ -26,7 +26,7 @@ if (stage) {
         const cardW = cards[0].offsetWidth || w * 0.4;
         const cardH = cards[0].offsetHeight || 240;
         radiusX = Math.max(150, Math.min(w * 0.33, w / 2 - cardW * 0.3));
-        lift = cardH * 0.55;
+        lift = cardH * 0.50;
     };
 
     const layout = () => {
@@ -36,7 +36,7 @@ if (stage) {
             const depth = (cosA + 1) / 2;          // 1 = front (near), 0 = back (far)
             const x = Math.sin(a) * radiusX;
             const y = cosA * lift;                 // front sits low, back rides high
-            const scale = 0.5 + 0.9 * depth;   // front blows up to ~1.4×, back shrinks to ~0.5×
+            const scale = 0.55 + 0.85 * depth;   // front stays ~1.4×; sides/back smaller (~0.87×, ~0.35×)
             card.style.transform =
                 `translate(-50%, -50%) translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) scale(${scale.toFixed(3)})`;
             card.style.opacity = (0.4 + 0.6 * depth).toFixed(3);
