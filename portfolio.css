@@ -299,21 +299,23 @@ main {
 .cf-prev { left: 4px; }
 .cf-next { right: 4px; }
 
-/* Project name — a flag tab pinned to each card's lower-left corner.
-   Quiet and tucked when off-centre, emphasised and risen when selected. */
+/* Project name — a flag that hangs from each card's lower-left corner,
+   below the image rather than over it. Quiet off-centre, emphasised when
+   selected (drops a touch lower and picks up the sage tint). */
 .cf-flag {
     position: absolute;
     left: 0;
-    bottom: 16px;
+    top: 100%;                 /* attach at the bottom edge and hang below */
     z-index: 2;
-    padding: 0.45rem 1.1rem;
+    padding: 0.4rem 1rem;
     font-size: clamp(0.8rem, 1.5vw, 1.05rem);
     letter-spacing: -0.01em;
     white-space: nowrap;
     color: var(--text-muted);
-    background: rgba(28, 35, 33, 0.82);
-    opacity: 0.8;
-    transform: translateY(8px);
+    background: rgba(28, 35, 33, 0.88);
+    opacity: 0.85;
+    transform-origin: top left;
+    transform: translateY(0);
     transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
                 background 0.4s ease, color 0.4s ease,
                 opacity 0.4s ease, box-shadow 0.4s ease;
@@ -323,15 +325,15 @@ main {
 .cf-card:not(.is-active):hover .cf-flag {
     opacity: 1;
     color: var(--text);
-    transform: translateY(0);
+    transform: translateY(3px);
 }
 
-/* The selected card's flag rises and picks up the sage tint. */
+/* The selected card's flag drops a little further and picks up the sage tint. */
 .cf-card.is-active .cf-flag {
     opacity: 1;
     color: var(--text);
     background: rgba(143, 171, 159, 0.24);
-    transform: translateY(0);
+    transform: translateY(5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
 }
 
