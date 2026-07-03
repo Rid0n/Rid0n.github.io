@@ -12,7 +12,7 @@ const PROJECTS = {
         title: 'Unitree Go2 Quadruped',
         meta: 'Palisade Research · Jetson Orin, ROS2, Nav2, C++, Python, Docker',
         bullets: [
-            'For the on a Unitree Go2 quadruped:',
+            'For the Unitree Go2 quadruped:',
             'Configured the full autonomy stack for autonomous office perimeter patrol.',
             'Fused LiDAR SLAM, Nav2 navigation, YOLOv8 person detection and BehaviorTree reactive behaviors.',
             'Calibrated LiDAR extrinsics and denoised point clouds for reliable mapping and navigation.',
