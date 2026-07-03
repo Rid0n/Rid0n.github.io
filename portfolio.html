@@ -23,20 +23,20 @@
             <button type="button" class="cf-nav cf-prev" aria-label="Previous project">‹</button>
 
             <div class="cf-stage">
-                <button type="button" class="cf-card">
+                <button type="button" class="cf-card" data-project="go2">
                     <img src="media/go2_titlecard.jpg" alt="Unitree Go2 quadruped">
                     <span class="cf-flag">Unitree Go2</span>
                 </button>
-                <button type="button" class="cf-card">
+                <button type="button" class="cf-card" data-project="serena">
                     <img src="media/serena_1.jpg" alt="Serena retail robot">
                     <span class="cf-flag">Retail Mobile Robots</span>
                 </button>
-                <button type="button" class="cf-card cf-card--dual">
+                <button type="button" class="cf-card cf-card--dual" data-project="drone">
                     <img src="media/rover.jpg" alt="Mars rover">
                     <img src="media/drone.jpg" alt="Autonomous drone">
                     <span class="cf-flag">Drone &amp; Mars Rover</span>
                 </button>
-                <button type="button" class="cf-card">
+                <button type="button" class="cf-card" data-project="sat">
                     <img src="media/sat1.jpg" alt="Picosatellite">
                     <span class="cf-flag">Picosatellite</span>
                 </button>
@@ -44,6 +44,10 @@
 
             <button type="button" class="cf-nav cf-next" aria-label="Next project">›</button>
         </div>
+
+        <p class="cf-hint">Click the front project to view details</p>
+
+        <div id="cf-detail" class="cf-detail" hidden></div>
     </section>
 
     <!-- ── Toolkit ── -->
@@ -128,6 +132,7 @@
 
     </main>
 
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="portfolio.js"></script>
 </body>
 </html>
