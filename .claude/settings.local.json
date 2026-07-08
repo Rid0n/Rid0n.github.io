@@ -3,7 +3,9 @@
     "allow": [
       "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\bin\\\\git.exe\"; Set-Location \"c:\\\\Users\\\\serge\\\\frieposter\"; & $git add .; & $git commit -m \"feat: SVG support in collage \\(skip compression\\)\"; & $git push)",
       "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\bin\\\\git.exe\"; Set-Location \"c:\\\\Users\\\\serge\\\\frieposter\"; & $git add .; & $git commit -m \"deploy final collage arrangement\"; & $git push)",
-      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\bin\\\\git.exe\"; Set-Location \"c:\\\\Users\\\\serge\\\\frieposter\"; & $git add .; & $git commit -m \"fix: seed IndexedDB from collage-data.js so new images can be added\"; & $git push)"
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\bin\\\\git.exe\"; Set-Location \"c:\\\\Users\\\\serge\\\\frieposter\"; & $git add .; & $git commit -m \"fix: seed IndexedDB from collage-data.js so new images can be added\"; & $git push)",
+      "WebSearch",
+      "WebFetch(domain:futureoflife.org)"
     ]
   }
 }

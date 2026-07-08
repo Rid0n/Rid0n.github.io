@@ -72,6 +72,22 @@ const PROJECTS = {
             { type: 'image', src: 'media/sat2.jpg' },
             { type: 'image', src: 'media/sat3.jpg' }
         ]
+    },
+    quad: {
+        title: 'Autonomous Indoor Quadcopter',
+        meta: 'Future of Life Institute · ArduPilot, MAVLink, EKF fusion, CUDA · SpeedyBee F405, Raspberry Pi Zero 2 W',
+        bullets: [
+            'For a 350g GPS-denied indoor quadcopter:',
+            'Flew fully autonomous indoor missions that locate and approach a known face.',
+            'Patched ArduPilot firmware and fused optical-flow/LiDAR in the EKF for stable flight without GPS.',
+            'Built a CUDA-accelerated face-recognition ground station (~60 FPS) commanding the drone over MAVLink.',
+            'Root-caused airframe instabilities via FFT on raw 1 kHz IMU logs, then hand-tuned rate PIDs and altitude control.',
+            'Built a fail-safe mission state machine with verified commands and layered emergency responses.'
+        ],
+        media: [
+            { type: 'image', src: 'media/copter_main.jpg' },
+            { type: 'image', src: 'media/copter_3.jpg' }
+        ]
     }
 };
 
