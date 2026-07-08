@@ -39,6 +39,7 @@
     --text-muted:  #a6b1ac;
     --accent:      #8fab9f;  /* muted sage */
     --accent-soft: #6f8a7f;
+    --bright:      #e6a23c;  /* warm amber — used sparingly for highlights */
     --line:        #36413d;
 }
 
@@ -98,6 +99,10 @@ body {
     gap: 1.5rem;
 }
 
+.toolkit .section-title {
+    margin-bottom: 0.4rem;
+}
+
 .tool-group {
     display: grid;
     grid-template-columns: 200px minmax(0, 1fr);
@@ -135,7 +140,7 @@ body {
 
 .tool-chips li:hover {
     color: var(--text);
-    border-color: var(--accent-soft);
+    border-color: var(--bright);
 }
 
 /* ── Layout blocks ──
@@ -145,6 +150,15 @@ main {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 28px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 2.4rem;
 }
 
 .block {
@@ -171,7 +185,7 @@ main {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    color: var(--accent-soft);
+    color: var(--bright);
     margin-bottom: 2.4rem;
 }
 
@@ -294,7 +308,7 @@ main {
 }
 
 .cf-nav:hover {
-    color: var(--accent);
+    color: var(--bright);
 }
 
 .cf-prev { left: 4px; }
@@ -337,6 +351,13 @@ main {
     background: rgba(143, 171, 159, 0.24);
     transform: translateY(5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+}
+
+/* Hovering the selected card warms its flag to amber. */
+.cf-card.is-active:hover .cf-flag {
+    color: #1c2320;
+    background: var(--bright);
+    box-shadow: 0 8px 22px rgba(230, 162, 60, 0.3);
 }
 
 /* Serena is a tall portrait shot — bias the crop low (but not all the way)
@@ -395,7 +416,7 @@ img[src$="serena_1.jpg"] {
     transition: color 0.2s ease;
 }
 
-.cf-close:hover { color: var(--accent); }
+.cf-close:hover { color: var(--bright); }
 
 .cf-detail-title {
     font-size: clamp(1.4rem, 3vw, 2rem);
@@ -434,7 +455,7 @@ img[src$="serena_1.jpg"] {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--accent-soft);
+    background: var(--bright);
 }
 
 /* Slideshow */
@@ -500,7 +521,7 @@ img[src$="serena_1.jpg"] {
 }
 
 .cf-prev-s:hover,
-.cf-next-s:hover { color: var(--accent); }
+.cf-next-s:hover { color: var(--bright); }
 
 .cf-dots {
     display: flex;
@@ -521,7 +542,7 @@ img[src$="serena_1.jpg"] {
 .cf-dot:hover { background: var(--accent-soft); }
 
 .cf-dot.active {
-    background: var(--accent);
+    background: var(--bright);
     transform: scale(1.25);
 }
 

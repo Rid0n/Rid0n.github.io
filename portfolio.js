@@ -86,6 +86,7 @@ const PROJECTS = {
         ],
         media: [
             { type: 'image', src: 'media/copter_main.jpg' },
+            { type: 'video', src: 'media/copter_2.mp4' },
             { type: 'image', src: 'media/copter_3.jpg' }
         ]
     }
