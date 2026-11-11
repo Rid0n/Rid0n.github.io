@@ -13,10 +13,11 @@ const PROJECTS = {
         meta: 'Palisade Research · Jetson Orin, ROS2, Nav2, C++, Python, Docker',
         bullets: [
             'For the Unitree Go2 quadruped:',
-            'Configured the full autonomy stack for autonomous office perimeter patrol.',
-            'Fused LiDAR SLAM, Nav2 navigation, YOLOv8 person detection and BehaviorTree reactive behaviors.',
-            'Calibrated LiDAR extrinsics and denoised point clouds for reliable mapping and navigation.',
-            'Ran AI-safety shutdown-avoidance trials with an LLM in control of the robot.',
+            'Built the autonomy stack for unattended perimeter patrol as the team’s robotics engineer.',
+            'Integrated LiDAR-based SLAM, Nav2, YOLOv8 person detection and BehaviorTree-based reactive behaviors.',
+            'Got the team’s non-robotics engineers up to speed on ROS2.',
+            'Sharpened navigation and mapping accuracy through LiDAR extrinsic calibration and point-cloud denoising of the data feeding SLAM and Nav2.',
+            'Ran AI-safety experiments on LLM shutdown avoidance with an LLM controlling the robot, designing the trial protocols and analyzing the behavioral data.',
             'Directed shooting of the capstone video that amassed 1.3M views on X.'
         ],
         media: [
@@ -30,11 +31,10 @@ const PROJECTS = {
         title: 'Retail Mobile Robots',
         meta: 'Coalescent Mobile Robotics · C++, ROS2, Nav2, Docker, Linux',
         bullets: [
-            'For a fleet of autonomous mobile robots in retail stores:',
-            'Built and maintained the Nav2 Behavior Tree architecture driving motion planning for a wheeled robot.',
-            'Implemented 10 mission-specific robot behaviors in C++.',
-            'Overhauled the Behavior Trees package to tie 20+ packages together — more testable, robust, with stats collection.',
-            'Ran on-site field testing and debugging throughout live deployments.'
+            'For a fleet of autonomous mobile robots (AMRs) in retail stores:',
+            'Delivered 15+ mission-specific robot behaviors in C++ on the Nav2 Behavior Tree architecture driving the fleet’s motion planning.',
+            'Re-architected the Behavior Tree package to orchestrate the entire robotic system (20+ packages), raising testability, robustness and statistics collection.',
+            'Field-tested and debugged the robot on-site during live deployments.'
         ],
         media: [
             { type: 'image', src: 'media/serena_1.jpg' },
@@ -99,6 +99,10 @@ if (stage) {
     const cf = document.querySelector('.coverflow');
     const detail = document.getElementById('cf-detail');
     const hint = document.querySelector('.cf-hint');
+    // Touch devices have no hover/click affordance; say "Tap" there.
+    if (hint && window.matchMedia('(hover: none)').matches) {
+        hint.textContent = 'Tap the front project to view details';
+    }
     const N = cards.length;
     const STEP = (2 * Math.PI) / N;   // even spacing of the nodes
 

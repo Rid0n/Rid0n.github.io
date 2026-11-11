@@ -29,18 +29,20 @@
 }
 
 /* ── Palette ──
-   Desaturated cousin of the main site: the same deep-green family,
-   dialed back toward slate green-grey for a quieter, professional feel. */
+   Ink navy, same family as the CV's navy/blue, with mint kept
+   for the primary call to action and small highlights. */
 
 :root {
-    --bg:          #232b29;
-    --bg-alt:      #2a3331;
-    --text:        #e4e8e6;
-    --text-muted:  #a6b1ac;
-    --accent:      #8fab9f;  /* muted sage */
-    --accent-soft: #6f8a7f;
-    --bright:      #e6a23c;  /* warm amber — used sparingly for highlights */
-    --line:        #36413d;
+    --bg:           #0f1724;
+    --bg-alt:       #172131;
+    --bg-deep:      #0b111c;  /* image wells behind media */
+    --text:         #e6ebf2;
+    --text-muted:   #9aa7b8;
+    --accent:       #7fb0e0;  /* soft sky blue */
+    --accent-soft:  #6a8fbb;
+    --bright:       #5fd4b0;  /* mint — used sparingly for highlights */
+    --bright-hover: #86e2c6;
+    --line:         #24314a;
 }
 
 *, *::before, *::after {
@@ -90,6 +92,104 @@ body {
     letter-spacing: 0.02em;
     color: var(--accent);
     border-bottom: 1px solid var(--accent-soft);
+}
+
+.hero-summary {
+    max-width: 40em;
+    margin: 1.4rem auto 0;
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    color: var(--text);
+}
+
+.hero-meta {
+    margin-top: 0.6rem;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+}
+
+.hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1.6rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.55rem 1.3rem;
+    border: 1px solid var(--accent-soft);
+    border-radius: 100px;
+    color: var(--text);
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn:hover,
+.btn:focus-visible {
+    background: var(--bg-alt);
+    border-color: var(--accent);
+}
+
+.btn-primary {
+    background: var(--bright);
+    border-color: var(--bright);
+    color: var(--bg);
+    font-weight: 600;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    background: var(--bright-hover);
+    border-color: var(--bright-hover);
+    color: var(--bg);
+}
+
+/* ── Timeline (experience, publication, education) ──
+   Same two-column rhythm as the toolkit rows: a muted label on the
+   left, content on the right; stacks on narrow screens. */
+
+.timeline {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5vh 28px;
+}
+
+.tl-row {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 28px;
+    padding: 1.6rem 0;
+    border-top: 1px solid var(--line);
+}
+
+.tl-when {
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent-soft);
+    padding-top: 0.35rem;
+}
+
+.tl-role {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.3;
+}
+
+.tl-org {
+    margin-top: 0.2rem;
+    font-style: italic;
+    color: var(--accent);
+}
+
+.tl-desc {
+    margin-top: 0.6rem;
+    color: var(--text-muted);
+    max-width: 46em;
 }
 
 /* ── Toolkit band ──
@@ -261,7 +361,7 @@ main {
     height: var(--cf-h);
     padding: 0;
     border: none;
-    background: #1d2422;
+    background: var(--bg-deep);
     cursor: pointer;
     overflow: visible;
     transform-origin: center bottom;   /* grow upward from a fixed baseline */
@@ -333,7 +433,7 @@ main {
     letter-spacing: -0.01em;
     white-space: nowrap;
     color: var(--text-muted);
-    background: rgba(28, 35, 33, 0.88);
+    background: rgba(15, 23, 36, 0.88);
     border-radius: 14px;
     opacity: 0.85;
     transform-origin: top left;
@@ -354,16 +454,16 @@ main {
 .cf-card.is-active .cf-flag {
     opacity: 1;
     color: var(--text);
-    background: rgba(143, 171, 159, 0.24);
+    background: rgba(127, 176, 224, 0.24);
     transform: translateY(5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
 }
 
 /* Hovering the selected card warms its flag to amber. */
 .cf-card.is-active:hover .cf-flag {
-    color: #1c2320;
+    color: var(--bg);
     background: var(--bright);
-    box-shadow: 0 8px 22px rgba(230, 162, 60, 0.3);
+    box-shadow: 0 8px 22px rgba(95, 212, 176, 0.3);
 }
 
 /* Serena is a tall portrait shot — bias the crop low (but not all the way)
@@ -470,7 +570,7 @@ img[src$="serena_1.jpg"] {
     width: 100%;
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    background: #1d2422;
+    background: var(--bg-deep);
 }
 
 .cf-slide {
@@ -492,7 +592,7 @@ img[src$="serena_1.jpg"] {
     height: 100%;
     object-fit: cover;
     display: block;
-    background: #1d2422;
+    background: var(--bg-deep);
 }
 
 .cf-slide.tweet {
@@ -565,9 +665,14 @@ img[src$="serena_1.jpg"] {
         min-height: 0;
     }
 
-    .tool-group {
+    .tool-group,
+    .tl-row {
         grid-template-columns: 1fr;
         gap: 12px;
+    }
+
+    .tl-when {
+        padding-top: 0;
     }
 
     .cf-section {

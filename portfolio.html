@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sergei Molchanov — Robotics Software Engineer</title>
+    <meta name="description" content="Robotics Software Engineer: ROS2/Nav2 navigation, Behavior Trees, LiDAR SLAM and field deployments. Belgrade, Serbia; open to on-site in Europe or remote.">
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="portfolio.css">
 </head>
@@ -13,7 +14,56 @@
     <header class="hero">
         <h1 class="hero-name">Sergei Molchanov</h1>
         <p class="hero-title">Robotics Software Engineer</p>
+        <p class="hero-summary">2 years of industry experience building ROS2 autonomy stacks
+        for robots, specializing in Navigation and BehaviorTree-based control.</p>
+        <p class="hero-meta">Belgrade, Serbia · Open to on-site roles in Europe or remote ·
+        Full-time or contract</p>
+        <nav class="hero-links" aria-label="Contact">
+            <a class="btn btn-primary" href="SergeiMolchanovCV.pdf" target="_blank" rel="noopener">Download CV</a>
+            <a class="btn" href="mailto:serezhdipity@gmail.com">Email</a>
+            <a class="btn" href="https://www.linkedin.com/in/serezhdipity/" target="_blank" rel="noopener">LinkedIn</a>
+        </nav>
     </header>
+
+    <!-- ── Experience ── -->
+    <section class="timeline" id="experience">
+        <h2 class="section-title">Experience</h2>
+
+        <article class="tl-row">
+            <p class="tl-when">Feb 2026 – Present</p>
+            <div class="tl-body">
+                <h3 class="tl-role">Robotics Software Engineer (Freelance)</h3>
+                <p class="tl-org">Future of Life Institute · US client</p>
+                <p class="tl-desc">Fully autonomous, GPS-denied indoor missions on a 350g
+                quadcopter: patched ArduPilot firmware, optical-flow/LiDAR EKF fusion and a
+                CUDA face-recognition ground station over MAVLink. Now developing a Unitree
+                Go2-based project with ROS2 and Nav2.</p>
+            </div>
+        </article>
+
+        <article class="tl-row">
+            <p class="tl-when">Oct 2025 – Feb 2026</p>
+            <div class="tl-body">
+                <h3 class="tl-role">Robotics Software Engineer</h3>
+                <p class="tl-org">Palisade Research · US client</p>
+                <p class="tl-desc">As the team’s robotics engineer, built the autonomy stack
+                for a Unitree Go2 doing unattended perimeter patrol: LiDAR-based SLAM, Nav2,
+                YOLOv8 person detection and BehaviorTree-based reactive behaviors.</p>
+            </div>
+        </article>
+
+        <article class="tl-row">
+            <p class="tl-when">Jan 2023 – Feb 2024</p>
+            <div class="tl-body">
+                <h3 class="tl-role">Junior Robotics Software Engineer</h3>
+                <p class="tl-org">Coalescent Mobile Robotics · Denmark</p>
+                <p class="tl-desc">Delivered 15+ mission-specific C++ behaviors on the Nav2
+                Behavior Tree architecture for a fleet of retail AMRs, re-architected the
+                BT package to orchestrate 20+ packages, and field-tested robots during live
+                deployments.</p>
+            </div>
+        </article>
+    </section>
 
     <!-- ── Projects showcase ── -->
     <section id="projects" class="cf-section">
@@ -23,10 +73,6 @@
             <button type="button" class="cf-nav cf-prev" aria-label="Previous project">‹</button>
 
             <div class="cf-stage">
-                <button type="button" class="cf-card" data-project="quad">
-                    <img src="media/copter_main.jpg" alt="Custom indoor quadcopter">
-                    <span class="cf-flag">Custom-built Autonomous Quadcopter</span>
-                </button>
                 <button type="button" class="cf-card" data-project="go2">
                     <img src="media/go2_titlecard.jpg" alt="Unitree Go2 quadruped">
                     <span class="cf-flag">Unitree Go2</span>
@@ -34,6 +80,10 @@
                 <button type="button" class="cf-card" data-project="serena">
                     <img src="media/serena_1.jpg" alt="Serena retail robot">
                     <span class="cf-flag">Retail Mobile Robots</span>
+                </button>
+                <button type="button" class="cf-card" data-project="quad">
+                    <img src="media/copter_main.jpg" alt="Custom indoor quadcopter">
+                    <span class="cf-flag">Custom-built Autonomous Quadcopter</span>
                 </button>
                 <button type="button" class="cf-card cf-card--dual" data-project="drone">
                     <img src="media/rover.jpg" alt="Mars rover">
@@ -60,20 +110,21 @@
         <div class="tool-group">
             <span class="tool-label">Robotics &amp; Autonomy</span>
             <ul class="tool-chips">
-                <li>ROS2</li><li>Nav2</li><li>Gazebo</li><li>Behavior Trees</li>
+                <li>ROS2 (Humble)</li><li>Nav2</li><li>Gazebo</li><li>Behavior Trees</li>
                 <li>LiDAR</li><li>SLAM</li><li>Object Tracking</li><li>Sensor Integration</li>
+                <li>ArduPilot (MAVLink)</li>
             </ul>
         </div>
         <div class="tool-group">
             <span class="tool-label">Programming</span>
             <ul class="tool-chips">
-                <li>C++</li><li>Python</li><li>C#</li>
+                <li>C++</li><li>Python</li><li>C</li>
             </ul>
         </div>
         <div class="tool-group">
             <span class="tool-label">Systems</span>
             <ul class="tool-chips">
-                <li>Embedded Linux (Jetson)</li><li>Microcontrollers</li><li>Docker</li>
+                <li>Embedded Linux (Jetson, Raspberry Pi)</li><li>Microcontrollers</li><li>Docker</li>
             </ul>
         </div>
         <div class="tool-group">
@@ -93,34 +144,22 @@
 
                 <ul class="skill-list">
                     <li class="skill">
-                        <h3>End-to-end autonomy stacks</h3>
-                        <p>Take a mobile robot from bare hardware to navigating real
-                        environments on its own — mapping, localization, path planning
-                        and obstacle avoidance built on ROS2 and Nav2.</p>
+                        <h3>Autonomous navigation with ROS2 &amp; Nav2</h3>
+                        <p>Get a mobile robot navigating real environments on its own —
+                        mapping, localization, path planning and obstacle avoidance
+                        built on ROS2 and Nav2.</p>
                     </li>
                     <li class="skill">
-                        <h3>Perception &amp; computer vision</h3>
-                        <p>Give a robot eyes it can trust: LiDAR SLAM, camera-based
-                        object detection and tracking, and sensor fusion for reliable
-                        awareness of its surroundings.</p>
+                        <h3>Robot behavior with Behavior Trees</h3>
+                        <p>Design the logic that makes a robot act sensibly in the field —
+                        reactive, testable, mission-driven Behavior Trees that orchestrate
+                        a whole robotic system.</p>
                     </li>
                     <li class="skill">
-                        <h3>Robot behavior &amp; decision-making</h3>
-                        <p>Design the logic that makes a robot act sensibly in the field
-                        with Behavior Trees — reactive, testable and mission-driven
-                        control across large systems.</p>
-                    </li>
-                    <li class="skill">
-                        <h3>Sensor &amp; hardware integration</h3>
-                        <p>Bring up and calibrate the physical layer — LiDAR, cameras,
-                        IMUs and microcontrollers wired over I2C, SPI and UART — so the
-                        software has clean data to work with.</p>
-                    </li>
-                    <li class="skill">
-                        <h3>Embedded &amp; low-level firmware</h3>
-                        <p>Write efficient C/C++ down to the microcontroller for tight,
-                        real-time control on constrained hardware where every cycle and
-                        byte counts.</p>
+                        <h3>LiDAR SLAM, calibration &amp; perception</h3>
+                        <p>Give the stack data it can trust: LiDAR extrinsic calibration,
+                        point-cloud denoising, SLAM, and camera-based detection and
+                        tracking.</p>
                     </li>
                     <li class="skill">
                         <h3>Field deployment &amp; debugging</h3>
@@ -136,6 +175,47 @@
         </section>
 
     </main>
+
+    <!-- ── Publication, education, languages ── -->
+    <section class="timeline" id="background">
+        <h2 class="section-title">Publication &amp; Education</h2>
+
+        <article class="tl-row">
+            <p class="tl-when">Publication</p>
+            <div class="tl-body">
+                <h3 class="tl-role">Shutdown Resistance in Large Language Models, on robots!</h3>
+                <p class="tl-org">Palisade Research Technical Report</p>
+                <p class="tl-desc">Petrov A., Koldyba S., Molchanov S., et al.</p>
+            </div>
+        </article>
+
+        <article class="tl-row">
+            <p class="tl-when">2022 – 2023</p>
+            <div class="tl-body">
+                <h3 class="tl-role">Graduate Studies, Robotics</h3>
+                <p class="tl-org">University of Southern Denmark</p>
+                <p class="tl-desc">Quadrotor rigid-body simulation and PID stabilization in
+                Simulink; a Mindstorms line-follower with an autonomous CV-based grapple.</p>
+            </div>
+        </article>
+
+        <article class="tl-row">
+            <p class="tl-when">2019 – 2024</p>
+            <div class="tl-body">
+                <h3 class="tl-role">B.Sc. Robotics</h3>
+                <p class="tl-org">ITMO University</p>
+                <p class="tl-desc">Thesis: comparative evaluation of state-of-the-art
+                object-tracking algorithms.</p>
+            </div>
+        </article>
+
+        <article class="tl-row">
+            <p class="tl-when">Languages</p>
+            <div class="tl-body">
+                <p class="tl-desc">English (C2) · Russian (native) · Norwegian (B1)</p>
+            </div>
+        </article>
+    </section>
 
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="portfolio.js"></script>
