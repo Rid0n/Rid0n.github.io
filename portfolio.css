@@ -49,6 +49,12 @@
     padding: 0;
 }
 
+/* Base size: 16px on phones, grows to ~19px on wide desktops.
+   Everything below is in rem, so it all scales together. */
+html {
+    font-size: clamp(16px, 13px + 0.35vw, 19px);
+}
+
 body {
     font-family: 'IvarDisplay', Georgia, serif;
     background: var(--bg);
